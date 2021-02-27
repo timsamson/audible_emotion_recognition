@@ -69,11 +69,9 @@ function createDownloadLink(blob) {
     audioPlayback.src = url;
 
     link.href = url;
-    filename = 'audio.wav';
-    link.download = filename;
-    link.innerHTML = link.download;
-
-    recordingsList.appendChild(li);
+    filename = "audio";
+    link.download = filename+".wav";
+    link.innerHTML = "Download";
 
     li.appendChild(audioPlayback);
     li.appendChild(link);
@@ -91,11 +89,12 @@ function createDownloadLink(blob) {
             };
             var fd = new FormData();
             fd.append("audio_data", blob, filename);
-            xhr.open("POST", "/", true);
+            xhr.open("POST", "/record", true);
             xhr.send(fd);
     })
-    li.appendChild(document.createTextNode (" "))//add a space in between
+    li.appendChild(document.createTextNode (" / "))//add a space in between
     li.appendChild(upload)//add the upload link to li
     
 
+    recordingsList.appendChild(li);
 }

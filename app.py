@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template, redirect
+from flask import Flask, jsonify, render_template, redirect, request
 
 import os
 import psycopg2
@@ -77,7 +77,7 @@ def record_page():
         return render_template('record.html')
 
 @app.route("/gallery")
-def record_page():
+def gallery_page():
     print("responding to gallery page route request")
     return render_template("gallery.html")
 
