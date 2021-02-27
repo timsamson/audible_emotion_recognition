@@ -33,6 +33,14 @@ def model_test(input_value):
 
     return result
 
+def plot_audio(input_file):
+    
+    data, sampling_rate = librosa.load(input_file)
+    plt.figure(figsize=(12, 4))
+    plot_fig = librosa.display.waveplot(data, sr=sampling_rate)
+
+    return(data, sampling_rate, plot_fig)
+
 app = Flask(__name__)
 
 app.config['SESSION_COOKIE_SAMESITE'] = True
