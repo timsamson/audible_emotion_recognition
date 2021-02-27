@@ -30,32 +30,28 @@ app.config['SESSION_COOKIE_SECURE'] = True
 @app.route("/")
 def index_page():
     print("responding to index route request")
-
     return render_template("index.html")
-
-# @app.route("/homepage")
-# def home2():
-#     print("responding to homepage route request")
-#     # Return template and data
-#     return render_template("homepage.html")
 
 @app.route("/team")
 def team_page():
     print("responding to team route request")
-
     return render_template("team.html")
 
 @app.route("/emotions")
 def emotions_page():
     print("responding to emotions route request")
-
     return render_template("emotions.html")
 
 @app.route("/record")
 def record_page():
     print("responding to record page route request")
-
     return render_template("record.html")
+
+@app.route("/gallery")
+def record_page():
+    print("responding to gallery page route request")
+    return render_template("gallery.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
