@@ -15,7 +15,7 @@ def input_parser(input_file):
 
    try:
       X, sample_rate = librosa.load(input_file, res_type='kaiser_fast') 
-      mfccs = np.mean(librosa.feature.mfcc(y=X, sr=sample_rate, n_mfcc=40).T,axis=0) 
+      mfccs = np.mean(librosa.feature.mfcc(y=X, sr=sample_rate, n_mfcc=128).T,axis=0) 
    except Exception as e:
       print("Error encountered while parsing file: ", input_file)
       return None
@@ -28,7 +28,7 @@ def model_test(input_value):
     model = load('../models/rf_model.sav')
     feature = input_parser(input_file)
     arr = np.array(feature)
-    arr2d = np.reshape(arr, (1,40))
+    arr2d = np.reshape(arr, (1,128))
     result = model.predict(arr2d)  
 
     return result
