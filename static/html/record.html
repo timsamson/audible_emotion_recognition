@@ -17,8 +17,9 @@
                     <h1 class="display-4">Record a sound!</h1>
                     <p class="lead">Record a 5-10 second clip of speech and we will try to determine the major emotion.</p>
                     <hr class="my-4">
-                    <button class="btn btn-success btn-lg" role="button" id="record" onclick="recordAudio()">Start recording</button>
-                    <button class="btn btn-danger btn-lg" role="button" id="stopRecord" onclick="stopRecordAudio()">End recording</button>
+                    <button class="btn btn-success btn-lg" role="button" id="record" onclick="recordAudio(this)">Start recording</button>
+                    <button class="btn btn-danger btn-lg" role="button" id="stopRecord" disabled onclick="stopAudioRecord(this)">End recording</button>
+                    <audio id="recordedAudio"></audio>
                 </div>
             </div>
             <div class="col-md-2"></div>
