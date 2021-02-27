@@ -17,9 +17,10 @@
                     <h1 class="display-4">Record a sound!</h1>
                     <p class="lead">Record a 5-10 second clip of speech and we will try to determine the major emotion.</p>
                     <hr class="my-4">
-                    <button class="btn btn-success btn-lg" role="button" id="record" onclick="recordAudio(this)">Start recording</button>
-                    <button class="btn btn-danger btn-lg" role="button" id="stopRecord" disabled onclick="stopAudioRecord(this)">End recording</button>
-                    <audio id="recordedAudio"></audio>
+                    <button class="btn btn-success btn-lg" role="button" id="startRecord" onclick="startAudioRecord()">Start recording</button>
+                    <button class="btn btn-danger btn-lg" role="button" id="stopRecord" disabled onclick="stopAudioRecord()">End recording</button>
+                    <hr class="my-4">
+                    <ol id="recordingsList"></ol>
                 </div>
             </div>
             <div class="col-md-2"></div>
@@ -30,6 +31,7 @@
             <div class="col"></div>
         </div>
     </div>
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
     <script src="../js/record.js"></script>
 </body>
 </html>
