@@ -33,10 +33,6 @@ def model_test(input_value):
 
     return result
 
-
-
-
- 
 app = Flask(__name__)
 
 app.config['SESSION_COOKIE_SAMESITE'] = True
