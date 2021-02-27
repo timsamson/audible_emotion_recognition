@@ -15,7 +15,7 @@ var rec;
 var input;
 
 var AudioContext = window.AudioContext || window.webkitAudioContext;
-var audioContext = new AudioContext;
+var audioContext;
 
 function startAudioRecord() { 
     console.log("startRecord button clicked"); 
@@ -26,6 +26,8 @@ function startAudioRecord() {
     navigator.mediaDevices.getUserMedia({audio: true}).then(function(stream) {
         console.log("Initializing Recorder.js ..."); 
         
+        audioContext = new AudioContext;
+
         gumStream = stream;
 
         input = audioContext.createMediaStreamSource(stream);
