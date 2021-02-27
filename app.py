@@ -5,6 +5,10 @@ import psycopg2
 import numpy as np
 import socket
 import librosa
+from pylab import *
+import librosa.display
+from joblib import load
+
 
 #functions
 def input_parser(input_file):
@@ -15,10 +19,23 @@ def input_parser(input_file):
    except Exception as e:
       print("Error encountered while parsing file: ", input_file)
       return None
- 
    feature = mfccs.tolist()
-
+   
    return feature
+
+def model_test(input_value):
+
+    model = load('../models/rf_model.sav')
+    feature = input_parser(input_file)
+    arr = np.array(feature)
+    arr2d = np.reshape(arr, (1,40))
+    result = model.predict(arr2d)  
+
+    return result
+
+
+
+
  
 app = Flask(__name__)
 
