@@ -49,7 +49,7 @@ function startAudioRecord() {
 
 function stopAudioRecord() {
     console.log("stopRecord button clicked");
-    //disable the stop button, enable the record too allow for new recordings 
+    // Disable the stop button, enable the record to allow for new recordings 
     stopRecord.disabled = true;
     startRecord.disabled = false;
     //tell the recorder to stop the recording 
@@ -69,11 +69,33 @@ function createDownloadLink(blob) {
     audioPlayback.src = url;
 
     link.href = url;
-    link.download = new Date().toISOString() + '.wav';
+    filename = 'audio.wav';
+    link.download = filename;
     link.innerHTML = link.download;
+
+    recordingsList.appendChild(li);
 
     li.appendChild(audioPlayback);
     li.appendChild(link);
 
-    recordingsList.appendChild(li);
+    //upload link
+    var upload = document.createElement('a');
+    upload.href="#";
+    upload.innerHTML = "Upload";
+    upload.addEventListener("click", function(event){
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function(e) {
+                if(this.readyState === 4) {
+                    console.log("Server returned: ", e.target.responseText);
+                }
+            };
+            var fd = new FormData();
+            fd.append("audio_data", blob, filename);
+            xhr.open("POST", "/", true);
+            xhr.send(fd);
+    })
+    li.appendChild(document.createTextNode (" "))//add a space in between
+    li.appendChild(upload)//add the upload link to li
+    
+
 }

@@ -63,10 +63,18 @@ def emotions_page():
     print("responding to emotions route request")
     return render_template("emotions.html")
 
-@app.route("/record")
+@app.route("/record", methods=['GET', 'POST'])
 def record_page():
     print("responding to record page route request")
-    return render_template("record.html")
+    if request.method == "POST":
+        f = request.files['audio_data']
+        with open('audio.wav', 'wb') as audio:
+            f.save(audio)
+        print('file uploaded successfully')
+
+        return render_template('record.html', request="POST")
+    else:
+        return render_template('record.html')
 
 @app.route("/gallery")
 def record_page():
