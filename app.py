@@ -8,6 +8,7 @@ import librosa
 from pylab import *
 import librosa.display
 from joblib import load
+import datetime
 
 
 #functions
@@ -68,9 +69,11 @@ def record_page():
     print("responding to record page route request")
     if request.method == "POST":
         f = request.files['audio_data']
-        with open('uploads/audio.wav', 'wb') as audio:
-            f.save(audio)
-            print(model_test(audio))
+        file_name = datetime.datetime.now().strftime("uploads/%Y-%m-%d-%H-%M-%S.wav")
+        with open(file_name, 'wb') as audio_file:
+            f.save(audio_file)
+
+        print(model_test(file_name))
         print('file uploaded successfully')
 
         return render_template('record.html', request="POST")
