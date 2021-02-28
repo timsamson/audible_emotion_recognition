@@ -79,6 +79,8 @@ function createDownloadLink(blob) {
     var upload = document.createElement('a');
     upload.href="#";
     upload.innerHTML = "Upload";
+    //link output to upload button
+    
     upload.addEventListener("click", function(event){
             var xhr = new XMLHttpRequest();
             xhr.onload = function(e) {
@@ -86,6 +88,7 @@ function createDownloadLink(blob) {
                     console.log("Server accessed successfully");
                 }
             };
+            upload.upload = filename+".wav";
             var fd = new FormData();
             fd.append("audio_data", blob, filename);
             xhr.open("POST", "/record", true);

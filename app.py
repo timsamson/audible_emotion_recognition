@@ -76,9 +76,14 @@ def record_page():
         print(model_test(file_name))
         print('file uploaded successfully')
 
-        return render_template('record.html', request="POST")
+        return render_template('index.html', request="POST")
     else:
-        return render_template('record.html')
+        return render_template('index.html')
+
+# @app.route("/output")
+# def output():
+
+
 
 @app.route("/gallery")
 def gallery_page():
