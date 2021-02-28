@@ -12,6 +12,9 @@
     <link href="../static/slick/slick.css" rel='stylesheet' /> <!-- https://kenwheeler.github.io/slick/ -->
     <link href="../static/slick/slick-theme.css" rel='stylesheet' />
     <link href="../static/css/templatemo-real-dynamic.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Visuals</title>
+
     <!--
 
 TemplateMo 547 Real Dynamic
@@ -81,32 +84,31 @@ https://templatemo.com/tm-547-real-dynamic
         <div class="container-fluid">
             <!--Intro-->
             <section class="row tm-mb-1">
-                <h2 class="col-12 text-center tm-text-primary tm-my-1 tm-intro-text">Introducing the real dynamic</h2>
-                <div class="col-lg-4 text-center">
+                <h2 class="col-12 text-center tm-text-primary tm-my-1 tm-intro-text">Tell Us How You Really Feel?</h2>
+
+                <div class="col-lg-12 text-center">
                     <div class="tm-box-1">
-                        <i class="fas fa-truck-moving fa-4x tm-icon-1"></i>
-                        <h3 class="tm-h3 tm-text-primary">Real Dynamic HTML Template</h3>
-                        <p>This is a responsive 100% fluid-width layout that you can use for your business or commercial
-                            websites. Just go to TemplateMo and download the template now.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <div class="tm-box-1">
-                        <i class="fas fa-box-open fa-4x tm-icon-1"></i>
-                        <h3 class="tm-h3 tm-text-primary">New Marketing Strategies</h3>
-                        <p>Please do not redistribute our template on any website that provides downloadable template
-                            ZIP files.
-                            <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">Contact us</a> for
-                            more info.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <div class="tm-box-1">
-                        <i class="fas fa-people-carry fa-4x tm-icon-1"></i>
-                        <h3 class="tm-h3 tm-text-primary">Develop Futuristic Ideas</h3>
-                        <p>Morbi tristique metus mauris, vitae tempor elit molestie egestas. Integer id tristique leo.
-                            Vivamus mattis lobortis accumsan.</p>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8">
+                                    <div class="jumbotron">
+                                        <h1 class="display-4">Record a sound!</h1>
+                                        <p class="lead">Record a 5-10 second clip of speech and we will try to determine
+                                            the major emotion.</p>
+                                        <hr class="my-4">
+                                        <button class="btn btn-success btn-lg" role="button" id="startRecord"
+                                            onclick="startAudioRecord()">Start recording</button>
+                                        <button class="btn btn-danger btn-lg" role="button" id="stopRecord" disabled
+                                            onclick="stopAudioRecord()">End recording</button>
+                                        <hr class="my-4">
+                                        <ol id="recordingsList"></ol>
+                                    </div>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
@@ -114,18 +116,13 @@ https://templatemo.com/tm-547-real-dynamic
             <!-- Services -->
             <div class="row tm-mb-1">
                 <div class="col-lg-4">
+                    <i class="fas fa-mobile-alt fa-5x tm-icon-2 d-block text-center"></i>
                     <div class="tm-bg-gray tm-box-2">
                         <i class="fas fa-3x fa-sign tm-mb-3"></i>
                         <h3 class="tm-text-primary tm-h3">What can we do for you?</h3>
                         <p class="tm-mb-4">Pellentesque sodales accumsan sem, vel efficitur arcu blandit sed. In feugiat
                             dolor id sem interdum dignissim.</p>
-                        <ul class="tm-mb-4">
-                            <li>.01 Fusce aliquam aliquam</li>
-                            <li>.02 Bibendum quam elementum</li>
-                            <li>.03 Nam dapibus diam</li>
-                            <li>.04 Lobortis ligula convallis</li>
-                            <li>.05 Etiam interdum erat</li>
-                        </ul>
+
                         <a href="#" class="d-block text-right btn-pad btn-text">More Details...</a>
                     </div>
                 </div>
@@ -154,42 +151,44 @@ https://templatemo.com/tm-547-real-dynamic
 
             <!-- Testimonials -->
             <div class="tm-mb-2">
-                
-                </div>
+
+            </div>
 
             <div class="row tm-mb-7">
                 <div class="col-lg-3 col-sm-6 mb-lg-0 mb-5">
 
                 </div>
-                
-            <footer class="row">
-                <p class="mb-0 w-100 text-center col-12">
-                    Company &copy; 2020 Company Name
 
-                    - Real Dynamic by <a rel="nofollow" href="https://templatemo.com"
-                        class="tm-text-link">TemplateMo</a>
-                </p>
-            </footer>
-        </div> <!-- container-fluid -->
-    </div> <!-- tm-container -->
+                <footer class="row">
+                    <p class="mb-0 w-100 text-center col-12">
+                        Company &copy; 2020 Company Name
 
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/parallax.min.js"></script> <!-- https://pixelcog.github.io/parallax.js/ -->
-    <script src="slick/slick.min.js"></script>
-    <script src="js/tooplate-script.js"></script>
-    <script>
-        $(document).ready(function () {
-            // Testimonials carousel
-            $('.tm-carousel').slick({
-                dots: true,
-                infinite: false,
-                speed: 300,
-                slidesToShow: 1,
-                slidesToScroll: 1
+                        - Real Dynamic by <a rel="nofollow" href="https://templatemo.com"
+                            class="tm-text-link">TemplateMo</a>
+                    </p>
+                </footer>
+            </div> <!-- container-fluid -->
+        </div> <!-- tm-container -->
+
+        <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+        <script src="../static/js/record.js"></script>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/parallax.min.js"></script> <!-- https://pixelcog.github.io/parallax.js/ -->
+        <script src="slick/slick.min.js"></script>
+        <script src="js/tooplate-script.js"></script>
+        <script>
+            $(document).ready(function () {
+                // Testimonials carousel
+                $('.tm-carousel').slick({
+                    dots: true,
+                    infinite: false,
+                    speed: 300,
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                });
             });
-        });
-    </script>
+        </script>
 </body>
 
 </html>
