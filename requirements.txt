@@ -6,7 +6,7 @@ itsdangerous==1.1.0
 Jinja2==2.11.3
 joblib==0.14.1
 librosa==0.8.0
-llvmlite==0.31.0
+llvmlite==0.35.0
 MarkupSafe==1.1.1
 numpy==1.19.5
 psycopg2==2.8.6
