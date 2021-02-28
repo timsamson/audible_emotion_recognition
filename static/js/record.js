@@ -88,10 +88,10 @@ function createDownloadLink(blob) {
                     console.log("Server accessed successfully");
                 }
             };
-            upload.upload = filename+".wav";
+            // upload.upload = filename+".wav";
             var fd = new FormData();
             fd.append("audio_data", blob, filename);
-            xhr.open("POST", "/index", true);
+            xhr.open("POST", "/", true);
             xhr.send(fd);
     })
     li.appendChild(document.createTextNode (" / "))//add a space in between

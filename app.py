@@ -49,10 +49,10 @@ app.config['SESSION_COOKIE_SECURE'] = True
 
 # App routes
 
-@app.route("/")
-def index_page():
-    print("responding to index route request")
-    return render_template("index.html")
+# @app.route("/")
+# def index_page():
+#     print("responding to index route request")
+#     return render_template("index.html")
 
 @app.route("/team")
 def team_page():
@@ -64,7 +64,7 @@ def emotions_page():
     print("responding to emotions route request")
     return render_template("emotions.html")
 
-@app.route("/record", methods=['GET', 'POST'])
+@app.route("/", methods=['GET', 'POST'])
 def record_page():
     print("responding to record page route request")
     if request.method == "POST":
