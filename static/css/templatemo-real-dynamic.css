@@ -765,9 +765,28 @@ select:not([multiple]) {
 @media (max-width: 420px) {
   .tm-carousel { max-width: 240px; }
 }
-/*---------------*/
-/***** Honey *****/
-/*---------------*/
+
+.tm-featured { margin-bottom: 50px; }
+.slick-dots li { width: 30px; }
+.slick-dots li button { width: 30px; }
+
+.slick-dots li button:before {
+  font-family: "Font Awesome 5 Free";
+  font-size: 30px;
+  font-weight: 900;
+  content: "\f068";
+  color: #ddd;
+  opacity: 1;
+  width: 30px;
+  transition: all 0.3s ease;
+}
+
+.slick-dots li button:hover:before, 
+.slick-dots li button:focus:before,
+.slick-dots li.slick-active button:before {
+  color: #292828;
+}
+
 
 figure.effect-honey {
   max-width: 240px;
