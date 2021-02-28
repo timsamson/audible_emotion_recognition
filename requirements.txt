@@ -11,7 +11,6 @@ MarkupSafe==1.1.1
 numba==0.52.0
 numpy==1.19.5
 psycopg2==2.8.6
-pyaudio==0.2.11
 pypi-install==0.0.5
 soundfile==0.10.3.post1
 Werkzeug==1.0.1
