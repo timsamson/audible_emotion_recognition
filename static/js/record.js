@@ -38,7 +38,6 @@ function startAudioRecord() {
         }) 
         // Start recording 
         rec.record()
-        console.log("Recording started");
 
     }).catch(function(err) {
         // Enable the record button if getUserMedia() fails 
@@ -69,7 +68,7 @@ function createDownloadLink(blob) {
     audioPlayback.src = url;
 
     link.href = url;
-    filename = "audio";
+    filename = new Date().toISOString();
     link.download = filename+".wav";
     link.innerHTML = "Download";
 
@@ -84,7 +83,7 @@ function createDownloadLink(blob) {
             var xhr = new XMLHttpRequest();
             xhr.onload = function(e) {
                 if(this.readyState === 4) {
-                    console.log("Server returned: ", e.target.responseText);
+                    console.log("Server accessed successfully");
                 }
             };
             var fd = new FormData();

@@ -68,7 +68,7 @@ def record_page():
     print("responding to record page route request")
     if request.method == "POST":
         f = request.files['audio_data']
-        with open('audio.wav', 'wb') as audio:
+        with open('uploads/audio.wav', 'wb') as audio:
             f.save(audio)
         print('file uploaded successfully')
 
