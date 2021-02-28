@@ -23,9 +23,9 @@ def input_parser(input_file):
    
    return feature
 
-def model_test(input_value):
+def model_test(input_file):
 
-    model = load('../models/rf_model.sav')
+    model = load('models/rf_model.sav')
     feature = input_parser(input_file)
     arr = np.array(feature)
     arr2d = np.reshape(arr, (1,128))
@@ -70,6 +70,7 @@ def record_page():
         f = request.files['audio_data']
         with open('uploads/audio.wav', 'wb') as audio:
             f.save(audio)
+            print(model_test(audio))
         print('file uploaded successfully')
 
         return render_template('record.html', request="POST")
