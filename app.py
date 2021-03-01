@@ -56,9 +56,9 @@ def model_test(input_file):
     results_dict["Probabilities"].append(probs[0].tolist())
     results_dict["Predicted Sex"].append(label)
     print(results_dict)
-    plot_audio(input_file)
+    plot = plot_audio(input_file)
     session['dict'] = results_dict
-    return plot_audio
+    return plot
 
 def plot_audio(input_file):
     
