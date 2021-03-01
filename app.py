@@ -27,12 +27,17 @@ def input_parser(input_file):
 def model_test(input_file):
 
     model = load('models/rf_model.sav')
+    model2 = load('models/gender_model.sav')
     feature = input_parser(input_file)
     arr = np.array(feature)
     arr2d = np.reshape(arr, (1,128))
     result = model.predict(arr2d)  
-
-    return result
+    gender = model2.predict(arr2d)
+    if gender[0] == 0:
+        label = "Male"
+    elif gender[0] == 1:
+        label = "Female"
+    return result, label, gender[0]
 
 def plot_audio(input_file):
     
