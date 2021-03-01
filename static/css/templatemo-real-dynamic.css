@@ -44,7 +44,7 @@ ul, i { color: #666; }
 ul { line-height: 2; }
 
 .tm-container {
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto;
 }
 
@@ -53,13 +53,13 @@ ul { line-height: 2; }
 .tm-site-header {
     background-color: #474849;
     background-image: url(../img/stripe.png);
-    height: 60px;    
+    height: 10px;
 }
 
 .tm-site-header-overlay {
     color: white;
     background-color: #656667;    
-    padding-top: 20px; 
+    padding-top: 5px; 
 }
 
 .tm-header-stripe {
@@ -71,14 +71,18 @@ ul { line-height: 2; }
 
 .tm-header-stripe-short {
     width: 62%;
-    margin-top: 20px;  
+    margin-top: 5px;  
 }
 
-.tm-site-header-left { padding-bottom: 55px; }
+.tm-site-header-left { 
+  padding-bottom: 10px;
+  padding-left: auto;
+ }
 
 .tm-site-header-right {
-    padding-top: 40px;
-    padding-bottom: 20px;
+    /* padding-top: 10px; */
+    padding-right: 10%;
+    padding-bottom: 10px;
 }
 
 .tm-site-name { font-size: 3rem; }
@@ -88,7 +92,7 @@ ul { line-height: 2; }
   font-size: 1.4rem;
   transform: skew(-20deg, 0);
   transition: all 0.3s ease;
-  margin-right: 20px;
+  margin-right: auto;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -678,7 +682,7 @@ select:not([multiple]) {
 
     .tm-nav {        
         position: relative;
-        max-width: 200px;
+        max-width: 80%;
     }
 
     #navbarNav {
