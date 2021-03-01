@@ -1,11 +1,10 @@
-from flask import Flask, jsonify, render_template, redirect, request
+from flask import Flask, jsonify, render_template, redirect, request, session
 
 import os
 import psycopg2
 import numpy as np
 import socket
 import librosa
-# from pylab import *
 import librosa.display
 from joblib import load
 import datetime
@@ -56,9 +55,10 @@ def model_test(input_file):
     results_dict["Emotion Categories"].append(emotion_labels.tolist())
     results_dict["Probabilities"].append(probs[0].tolist())
     results_dict["Predicted Sex"].append(label)
-
-
-    return jsonify(results_dict)
+    print(results_dict)
+    plot_audio(input_file)
+    session['dict'] = results_dict
+    return plot_audio
 
 def plot_audio(input_file):
     
@@ -72,6 +72,8 @@ app = Flask(__name__)
 
 app.config['SESSION_COOKIE_SAMESITE'] = True
 app.config['SESSION_COOKIE_SECURE'] = True
+
+app.secret_key = 'upgraded potato'
 
 # App routes
 
@@ -88,8 +90,6 @@ def emotions_page():
 @app.route("/", methods=['GET', 'POST'])
 def record_page():
     print("responding to record page route request")
-
-
     #     return render_template('index.html', request="POST")
     # else:
     return render_template('index.html')
