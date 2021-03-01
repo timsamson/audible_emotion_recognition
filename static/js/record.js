@@ -91,7 +91,7 @@ function createDownloadLink(blob) {
             // upload.upload = filename+".wav";
             var fd = new FormData();
             fd.append("audio_data", blob, filename);
-            xhr.open("POST", "/", true);
+            xhr.open("POST", "/api/v1.0", true);
             xhr.send(fd);
     // })
     // li.appendChild(document.createTextNode (" / "));//add a space in between

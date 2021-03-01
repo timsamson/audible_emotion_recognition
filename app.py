@@ -10,6 +10,12 @@ import librosa.display
 from joblib import load
 import datetime
 
+results_dict = {
+    "Predicted Emotion": [],
+    "Emotion Categories": [], 
+    "Probabilities": [], 
+    "Predicted Sex": []
+    }
 
 #functions
 def input_parser(input_file):
@@ -31,13 +37,28 @@ def model_test(input_file):
     feature = input_parser(input_file)
     arr = np.array(feature)
     arr2d = np.reshape(arr, (1,128))
-    result = model.predict(arr2d)  
+    pred_emotion = model.predict(arr2d)  
+    probs = model.predict_proba(arr2d)
+    emotion_labels = model.classes_
     gender = model2.predict(arr2d)
     if gender[0] == 0:
         label = "Male"
     elif gender[0] == 1:
         label = "Female"
-    return result, label, gender[0]
+
+    # results_dict = {
+    #     "Predicted Emotion": pred_emotion[0],
+    #     "Emotion Categories": emotion_labels.tolist(), 
+    #     "Probabilities": probs[0].tolist(), 
+    #     "Predicted Sex": label
+    #     }
+    results_dict["Predicted Emotion"].append(pred_emotion[0])
+    results_dict["Emotion Categories"].append(emotion_labels.tolist())
+    results_dict["Probabilities"].append(probs[0].tolist())
+    results_dict["Predicted Sex"].append(label)
+
+
+    return jsonify(results_dict)
 
 def plot_audio(input_file):
     
@@ -67,23 +88,29 @@ def emotions_page():
 @app.route("/", methods=['GET', 'POST'])
 def record_page():
     print("responding to record page route request")
+
+
+    #     return render_template('index.html', request="POST")
+    # else:
+    return render_template('index.html')
+
+# @app.route("/output")
+# def output():
+
+@app.route("/api/v1.0", methods=['GET', 'POST'])
+def load_data():
     if request.method == "POST":
         f = request.files['audio_data']
         file_name = datetime.datetime.now().strftime("uploads/%Y-%m-%d-%H-%M-%S.wav")
         with open(file_name, 'wb') as audio_file:
             f.save(audio_file)
 
-        print(model_test(file_name))
+        results = model_test(file_name)
         print('file uploaded successfully')
-
-        return render_template('index.html', request="POST")
+        return (results)
     else:
-        return render_template('index.html')
-
-# @app.route("/output")
-# def output():
-
-
+        return (jsonify(results_dict))
+       
 
 @app.route("/gallery")
 def gallery_page():
