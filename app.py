@@ -6,6 +6,7 @@ import numpy as np
 import socket
 import librosa
 import librosa.display
+from matplotlib import pyplot as plt
 from joblib import load
 import datetime
 
@@ -15,6 +16,10 @@ results_dict = {
     "Probabilities": [], 
     "Predicted Sex": []
     }
+
+user_file = {
+    'filepath': []
+}
 
 #functions
 def input_parser(input_file):
@@ -30,7 +35,7 @@ def input_parser(input_file):
    return feature
 
 def model_test(input_file):
-
+    user_file["filepath"] = input_file
     model = load('models/rf_model.sav')
     model2 = load('models/gender_model.sav')
     feature = input_parser(input_file)
@@ -62,9 +67,9 @@ def plot_audio(input_file):
     data, sampling_rate = librosa.load(input_file)
     plt.figure(figsize=(12, 4))
     plot_fig = librosa.display.waveplot(data, sr=sampling_rate)
-
     return(data, sampling_rate, plot_fig)
 
+    
 app = Flask(__name__)
 
 # app.config['SESSION_COOKIE_SAMESITE'] = True
@@ -103,12 +108,15 @@ def record_page():
     else:
         return render_template('index.html')
 
-# @app.route("/output")
-# def output():
-
 @app.route("/data")
 def data():
     return(jsonify(results_dict))
+
+@app.route("/plot")
+def plot():
+    src_path = user_file['filepath']
+    # result = plot_audio(src_path)
+    return(src_path)
 
 # @app.route("/api/v1.0", methods=['GET', 'POST'])
 # def load_data():
@@ -126,7 +134,6 @@ def data():
 #     else:
 #         return (session.dict)
        
-
 @app.route("/gallery")
 def gallery_page():
     print("responding to gallery page route request")
