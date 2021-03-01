@@ -51,10 +51,14 @@ def model_test(input_file):
     #     "Probabilities": probs[0].tolist(), 
     #     "Predicted Sex": label
     #     }
-    results_dict["Predicted Emotion"].append(pred_emotion[0])
-    results_dict["Emotion Categories"].append(emotion_labels.tolist())
-    results_dict["Probabilities"].append(probs[0].tolist())
-    results_dict["Predicted Sex"].append(label)
+    # results_dict["Predicted Emotion"].append(pred_emotion[0])
+    # results_dict["Emotion Categories"].append(emotion_labels.tolist())
+    # results_dict["Probabilities"].append(probs[0].tolist())
+    # results_dict["Predicted Sex"].append(label)
+    results_dict["Predicted Emotion"] = pred_emotion[0]
+    results_dict["Emotion Categories"] = emotion_labels.tolist()
+    results_dict["Probabilities"] = probs[0].tolist()
+    results_dict["Predicted Sex"] = label
     print(results_dict)
     # session['dict'] = results_dict
     return jsonify(results_dict)
