@@ -44,13 +44,7 @@ def model_test(input_file):
         label = "Male"
     elif gender[0] == 1:
         label = "Female"
-
-    # results_dict = {
-    #     "Predicted Emotion": pred_emotion[0],
-    #     "Emotion Categories": emotion_labels.tolist(), 
-    #     "Probabilities": probs[0].tolist(), 
-    #     "Predicted Sex": label
-    #     }
+    # replace vs. append
     # results_dict["Predicted Emotion"].append(pred_emotion[0])
     # results_dict["Emotion Categories"].append(emotion_labels.tolist())
     # results_dict["Probabilities"].append(probs[0].tolist())
