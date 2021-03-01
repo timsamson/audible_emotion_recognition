@@ -12,5 +12,9 @@ matplotlib==1.4.3
 numba==0.52.0
 numpy==1.19.5
 psycopg2==2.8.6
+pyparsing @ file:///home/linux1/recipes/ci/pyparsing_1610983426697/work
 pypi-install==0.0.5
+pytz @ file:///tmp/build/80754af9/pytz_1608922264688/work
+six==1.15.0
+tornado @ file:///opt/concourse/worker/volumes/live/cd39df49-5c81-4c95-513c-5bb83298b7ef/volume/tornado_1606942310103/work
 Werkzeug==1.0.1

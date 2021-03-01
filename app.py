@@ -5,7 +5,7 @@ import psycopg2
 import numpy as np
 import socket
 import librosa
-from pylab import *
+# from pylab import *
 import librosa.display
 from joblib import load
 import datetime
@@ -53,11 +53,6 @@ app.config['SESSION_COOKIE_SAMESITE'] = True
 app.config['SESSION_COOKIE_SECURE'] = True
 
 # App routes
-
-# @app.route("/")
-# def index_page():
-#     print("responding to index route request")
-#     return render_template("index.html")
 
 @app.route("/team")
 def team_page():
