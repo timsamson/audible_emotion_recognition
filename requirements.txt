@@ -19,6 +19,10 @@ pypi-install==0.0.5
 pyparsing==2.0.1
 python-dateutil==2.1
 six==1.15.0
+<<<<<<< HEAD
 tornado==3.1
 wsgiref==0.1.2
 Werkzeug==1.0.1
+=======
+Werkzeug==1.0.1
+>>>>>>> 6522f0b400b54d27fa1b103cab0444d36efd1fe2
