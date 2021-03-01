@@ -5,7 +5,7 @@ import psycopg2
 import numpy as np
 import socket
 import librosa
-import pylab
+from pylab import *
 import librosa.display
 from joblib import load
 import datetime
