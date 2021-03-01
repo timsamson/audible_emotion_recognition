@@ -163,8 +163,20 @@ ul { line-height: 2; }
 }
 
 .tm-icon-2 { padding: 80px 30px; }
-footer { padding-bottom: 55px; }
 
+footer { 
+  padding-bottom: 55px;
+  background-color: #68696A;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #fff;
+ }
+
+
+}
 .btn {
   font-size: 1.2rem;
   padding: 10px 35px;
