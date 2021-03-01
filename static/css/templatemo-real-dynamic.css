@@ -274,7 +274,7 @@ i { color: #ABC; }
   }
 }
 
-.tm-name { font-size: 1.4rem; }
+.tm-name { font-size: 16px; }
 
 .tm-members {
     display: flex;
