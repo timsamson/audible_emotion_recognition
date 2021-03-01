@@ -8,7 +8,8 @@ joblib==0.14.1
 librosa==0.8.0
 llvmlite==0.35.0
 markupSafe==1.1.1
-matplotlib==1.4.3
+# matplotlib==1.4.3
+matplotlib @ file:///opt/concourse/worker/volumes/live/9bf5b21c-34eb-4715-6df2-13405c06dc9d/volume/matplotlib-base_1603377315355/work
 numba==0.52.0
 numpy==1.19.5
 psycopg2==2.8.6
