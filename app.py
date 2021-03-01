@@ -56,9 +56,8 @@ def model_test(input_file):
     results_dict["Probabilities"].append(probs[0].tolist())
     results_dict["Predicted Sex"].append(label)
     print(results_dict)
-    plot = plot_audio(input_file)
-    session['dict'] = results_dict
-    return plot
+    # session['dict'] = results_dict
+    return jsonify(results_dict)
 
 def plot_audio(input_file):
     
@@ -70,8 +69,8 @@ def plot_audio(input_file):
 
 app = Flask(__name__)
 
-app.config['SESSION_COOKIE_SAMESITE'] = True
-app.config['SESSION_COOKIE_SECURE'] = True
+# app.config['SESSION_COOKIE_SAMESITE'] = True
+# app.config['SESSION_COOKIE_SECURE'] = True
 
 app.secret_key = 'upgraded potato'
 
@@ -92,13 +91,6 @@ def record_page():
     print("responding to record page route request")
     #     return render_template('index.html', request="POST")
     # else:
-    return render_template('index.html')
-
-# @app.route("/output")
-# def output():
-
-@app.route("/api/v1.0", methods=['GET', 'POST'])
-def load_data():
     if request.method == "POST":
         f = request.files['audio_data']
         file_name = datetime.datetime.now().strftime("uploads/%Y-%m-%d-%H-%M-%S.wav")
@@ -106,10 +98,35 @@ def load_data():
             f.save(audio_file)
 
         results = model_test(file_name)
+        # session['dict']=results
         print('file uploaded successfully')
+        print(results)
         return (results)
     else:
-        return (jsonify(results_dict))
+        return render_template('index.html')
+
+# @app.route("/output")
+# def output():
+
+@app.route("/data")
+def data():
+    return(jsonify(results_dict))
+
+# @app.route("/api/v1.0", methods=['GET', 'POST'])
+# def load_data():
+#     if request.method == "POST":
+#         f = request.files['audio_data']
+#         file_name = datetime.datetime.now().strftime("uploads/%Y-%m-%d-%H-%M-%S.wav")
+#         with open(file_name, 'wb') as audio_file:
+#             f.save(audio_file)
+
+#         results = model_test(file_name)
+#         session['dict']=results
+
+#         print('file uploaded successfully')
+#         return (results)
+#     else:
+#         return (session.dict)
        
 
 @app.route("/gallery")
