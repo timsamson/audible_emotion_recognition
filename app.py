@@ -5,7 +5,6 @@ import psycopg2
 import numpy as np
 import socket
 import librosa
-import matplotlib
 import pylab
 import librosa.display
 from joblib import load
