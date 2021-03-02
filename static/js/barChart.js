@@ -1,5 +1,7 @@
+function buildCharts(){
+    buildMetaData();
 
-
+}
 
 function buildMetaData(result) {
     d3.json("/data", function(resultData) {
@@ -24,4 +26,6 @@ function buildMetaData(result) {
         
     });   
 }
+
+
 

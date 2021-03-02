@@ -37,7 +37,7 @@ def input_parser(input_file):
 def model_test(input_file):
     user_file["filepath"] = input_file
     model = load('models/rf_model.sav')
-    model2 = load('models/gender_linear_model.sav')
+    model2 = load('models/gender_model.sav')
     feature = input_parser(input_file)
     arr = np.array(feature)
     arr2d = np.reshape(arr, (1,128))
@@ -60,7 +60,6 @@ def model_test(input_file):
     results_dict["Predicted Sex"] = label
     print(results_dict)
     # session['dict'] = results_dict
-    buildMetaData(results_dict)
     return jsonify(results_dict)
 
 def plot_audio(input_file):
@@ -97,11 +96,11 @@ def record_page():
     # else:
     if request.method == "POST":
         f = request.files['audio_data']
-        # file_name = datetime.datetime.now().strftime("uploads/%Y-%m-%d-%H-%M-%S.wav")
-        # with open(file_name, 'wb') as audio_file:
-        #     f.save(audio_file)
+        file_name = datetime.datetime.now().strftime("uploads/%Y-%m-%d-%H-%M-%S.wav")
+        with open(file_name, 'wb') as audio_file:
+            f.save(audio_file)
 
-        results = model_test(f)
+        results = model_test(file_name)
         # session['dict']=results
         print('file uploaded successfully')
         print(results)
