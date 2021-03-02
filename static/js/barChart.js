@@ -1,5 +1,5 @@
 function buildMetaData() {
-    sleep(2);
+    sleep(2000);
     d3.json("/data", function(resultData) {
         predictedEmotion  = resultData.predictedEmotion;
         emotionCategories = resultData.emotionCategories;
