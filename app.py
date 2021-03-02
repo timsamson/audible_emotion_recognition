@@ -37,7 +37,7 @@ def input_parser(input_file):
 def model_test(input_file):
     user_file["filepath"] = input_file
     model = load('models/rf_model.sav')
-    model2 = load('models/gender_model.sav')
+    model2 = load('models/gender_rf_model.sav')
     feature = input_parser(input_file)
     arr = np.array(feature)
     arr2d = np.reshape(arr, (1,128))
