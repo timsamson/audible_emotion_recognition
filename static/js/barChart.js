@@ -15,7 +15,7 @@ function buildMetaData() {
             // console.log(predictedSex)
             // console.log(prob_dict)
 
-            buildBarChart(emotionCategories, probabilities);
+            buildBarChart(predictedEmotion, emotionCategories, probabilities, predictedSex);
 
         } else {
             setTimeout(buildMetaData, 300);
@@ -39,16 +39,23 @@ function buildMetaData() {
 //     return new Promise(resolve => setTimeout(resolve, time));
 //     }
 
-function buildBarChart(emotionCategories, probabilities) {
+function buildBarChart(predictedEmotion, emotionCategories, probabilities, predictedSex) {
     trace = [{
         x: emotionCategories,
         y: probabilities,
         type: 'bar',
+        // text: `: probability chance you are ${emotionCategories}`,
+        marker: {
+            color: ["red", "blue", "green", "orange", "yellow", "brown", "purple"]
+        }
     }]
 
     layout = {
-        title: "Emotions",
+        title: `We predict you are ${predictedSex} and sound ${predictedEmotion}`,
+        yaxis: {
+            title: "Probability of Each Emotion"
+        }
     }
 
-    Plotly.newPlot('result', trace)
+    Plotly.newPlot('result', trace, layout)
 }
