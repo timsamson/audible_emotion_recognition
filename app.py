@@ -60,6 +60,7 @@ def model_test(input_file):
     results_dict["Predicted Sex"] = label
     print(results_dict)
     # session['dict'] = results_dict
+    buildMetaData(results_dict)
     return jsonify(results_dict)
 
 def plot_audio(input_file):
