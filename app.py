@@ -96,11 +96,11 @@ def record_page():
     # else:
     if request.method == "POST":
         f = request.files['audio_data']
-        file_name = datetime.datetime.now().strftime("uploads/%Y-%m-%d-%H-%M-%S.wav")
-        with open(file_name, 'wb') as audio_file:
-            f.save(audio_file)
+        # file_name = datetime.datetime.now().strftime("uploads/%Y-%m-%d-%H-%M-%S.wav")
+        # with open(file_name, 'wb') as audio_file:
+        #     f.save(audio_file)
 
-        results = model_test(file_name)
+        results = model_test(f)
         # session['dict']=results
         print('file uploaded successfully')
         print(results)
