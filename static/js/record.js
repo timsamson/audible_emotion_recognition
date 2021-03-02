@@ -82,19 +82,19 @@ function createDownloadLink(blob) {
     //link output to upload button
     
     // upload.addEventListener("click", function(event){
-            var xhr = new XMLHttpRequest();
-            xhr.onload = function(e) {
-                if(this.readyState === 4) {
-                    console.log("Server accessed successfull");
-                    buildMetaData()
-                    console.log("called BuildMetaData")
-                }
-            };
-            // upload.upload = filename+".wav";
-            var fd = new FormData();
-            fd.append("audio_data", blob, filename);
-            xhr.open("POST", "/", true);
-            xhr.send(fd);
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function(e) {
+        if(this.readyState === 4) {
+            console.log("Server accessed successfully");
+            buildMetaData()
+            // console.log("called BuildMetaData")
+        }
+    };
+    // upload.upload = filename+".wav";
+    var fd = new FormData();
+    fd.append("audio_data", blob, filename);
+    xhr.open("POST", "/", true);
+    xhr.send(fd);
     // })
     // li.appendChild(document.createTextNode (" / "));//add a space in between
     // li.appendChild(upload)//add the upload link to li
