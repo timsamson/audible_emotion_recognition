@@ -1,63 +1,31 @@
-function buildMetaData(result) {
+function buildMetaData() {
+    sleep(2);
     d3.json("/data", function(resultData) {
-        buildData(result)
-        predictedEmotion  = [];
-        emotionCategories = [];
-        probabilities = [];
-        predictedSex = [];
-        var traces = [];
+        predictedEmotion  = resultData.predictedEmotion;
+        emotionCategories = resultData.emotionCategories;
+        probabilities = resultData.probabilities;
+        predictedSex = resultData.predictedSex;
 
-        resultData.forEach(function(data) {
-            predictedEmotion.push(data[0]);
-            emotionCategories.push(data[1]);
-            probabilities.push(data[3]);
-            predictedSex.push(data[2]);
-            });
+        prob_dict =  probabilities.reduce(function(result, field, index) {
+            result[emotionCategories[index]] = field;
+            return result;
+            }, {})
 
         console.log(predictedEmotion)
         console.log(emotionCategories)
         console.log(probabilities)
-        console.log(predictedSex)    
-        });   
-        colors = [
-            "#800000",
-            "#AC5924",
-            "#CC993D",
-            "#ECD957",
-            "#DF8234",
-            "#800000",
-            "#D6411A"
-        ]
-        for (i=0; i<emotionCategories.lngth; i++) {
+        console.log(predictedSex)
+        console.log(prob_dict)
+  
+        d3.select("#result").text(predictedEmotion);
+        d3.select("#cat").text(emotionCategories);
+        d3.select("#prob").text(probabilities);
+        d3.select("#sex").text(predictedSex);
 
-            var trace = {
-                x: [emotionCategories],
-                y: [parseFloat(probabilities[i])],
-                type: 'bar',
-                width: 1,
-                marker: {
-                    color: colors[i],
-                }
-            };
-            
-            traces.push(trace);
-        }
-        layout = {
-            barmode: 'stack',
-            title: cocktail,
-            xaxis: {
-                visible: false,
-            },
-            yaxis: {
-                visible: false,
-            },
-            showlegend: true,
-        }
+    })
+};
 
-        Plotly.newPlot('bar', traces, layout);
-
+function sleep(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
     }
-
-
-
 

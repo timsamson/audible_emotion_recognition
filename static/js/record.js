@@ -85,7 +85,9 @@ function createDownloadLink(blob) {
             var xhr = new XMLHttpRequest();
             xhr.onload = function(e) {
                 if(this.readyState === 4) {
-                    console.log("Server accessed successfully");
+                    console.log("Server accessed successfull");
+                    buildMetaData()
+                    console.log("called BuildMetaData")
                 }
             };
             // upload.upload = filename+".wav";

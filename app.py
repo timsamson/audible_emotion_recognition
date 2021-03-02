@@ -11,10 +11,10 @@ from joblib import load
 import datetime
 
 results_dict = {
-    "Predicted Emotion": [],
-    "Emotion Categories": [], 
-    "Probabilities": [], 
-    "Predicted Sex": []
+    "predictedEmotion": [],
+    "emotionCategories": [], 
+    "probabilities": [], 
+    "predictedSex": []
     }
 
 user_file = {
@@ -54,10 +54,10 @@ def model_test(input_file):
     # results_dict["Emotion Categories"].append(emotion_labels.tolist())
     # results_dict["Probabilities"].append(probs[0].tolist())
     # results_dict["Predicted Sex"].append(label)
-    results_dict["Predicted Emotion"] = pred_emotion[0]
-    results_dict["Emotion Categories"] = emotion_labels.tolist()
-    results_dict["Probabilities"] = probs[0].tolist()
-    results_dict["Predicted Sex"] = label
+    results_dict["predictedEmotion"] = pred_emotion[0]
+    results_dict["emotionCategories"] = emotion_labels.tolist()
+    results_dict["probabilities"] = probs[0].tolist()
+    results_dict["predictedSex"] = label
     print(results_dict)
     # session['dict'] = results_dict
     return jsonify(results_dict)
