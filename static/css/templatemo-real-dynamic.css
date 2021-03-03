@@ -854,7 +854,7 @@ figure.effect-honey:hover h4 i {
   transform: translate3d(0, 0, 0);
 }
 
-/* #card Data */
+/* #card Data for files*/
 html,
 body,
 .view {
@@ -880,7 +880,12 @@ body,
 
 .card {
   -webkit-border-radius: 10px;
-  border-radius: 10px; }
+  border-radius: 10px; 
+  /* padding-left: 10px;
+  padding-right: 10px; */
+  margin-left: 10px;
+  margin-right: 10px;
+}
 
 .card .view {
   -webkit-border-top-left-radius: 10px;
@@ -920,3 +925,9 @@ body,
   margin-top: -3px;
   background: black;
   cursor: pointer; }
+
+#card-layout {
+  margin-left: 30px;
+  margin-right: 30px;
+
+  }
