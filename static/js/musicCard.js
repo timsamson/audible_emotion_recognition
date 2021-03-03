@@ -6,7 +6,7 @@ document.querySelectorAll('.pButton').forEach(item => {
   })
 
 
- id for audio element
+    //id for audio element
       var duration = music.duration; // Duration of audio clip, calculated here for embedding purposes
       var pButton = document.getElementById('pButton'); // play button
       var playhead = document.getElementById('playhead'); // playhead
@@ -85,17 +85,17 @@ document.querySelectorAll('.pButton').forEach(item => {
           }
       }
 
-      Play and Pause
+      //Play and Pause
       function play() {
-          start music
+          //start music
           if (music.paused) {
               music.play();
-              remove play, add pause
+              //remove play, add pause
               pButton.className = "";
               pButton.className = "pButton fas fa-pause";
           } else { // pause music
               music.pause();
-              remove pause, add play
+              //remove pause, add play
               pButton.className = "";
               pButton.className = "pButton fas fa-play";
           }

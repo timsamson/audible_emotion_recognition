@@ -48,7 +48,8 @@ ul { line-height: 2; }
     margin: 0 auto;
 }
 
-.container-fluid { max-width: 1570px; }
+.container-fluid { max-width: 90%;
+padding-top: 10px; }
 
 .tm-site-header {
     background-color: #474849;
@@ -881,8 +882,6 @@ body,
 .card {
   -webkit-border-radius: 10px;
   border-radius: 10px; 
-  /* padding-left: 10px;
-  padding-right: 10px; */
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -893,11 +892,21 @@ body,
   -webkit-border-top-right-radius: 10px;
   border-top-right-radius: 10px; }
 
+.card h5 {
+  font-size: 2vw;
+
+}
+
 .card h5 a {
   color: #0d47a1;
 }
 .card h5 a:hover {
   color: #072f6b;
+}
+
+.card-body {
+  font-size: 1vw;
+
 }
 
 #pButton {
@@ -931,3 +940,10 @@ body,
   margin-right: 30px;
 
   }
+
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover
+}
+
