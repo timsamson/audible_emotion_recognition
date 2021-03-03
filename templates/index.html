@@ -12,11 +12,6 @@
     <link href="../static/slick/slick.css" rel='stylesheet' /> <!-- https://kenwheeler.github.io/slick/ -->
     <link href="../static/slick/slick-theme.css" rel='stylesheet' />
     <link href="../static/css/templatemo-real-dynamic.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="../static/css/demo.css" />
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="../static/css/knobKnob.css" />
-    <link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' type='text/css' />
-    <script type="text/javascript" src="../static/js/modernizr.custom.69142.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audio Visuals</title>
 </head>
@@ -79,58 +74,25 @@
 
     <div class="tm-container bg-white">
         <div class="tm-header-stripe w-100"></div>
-        <div class="container-fluid">
-            <!--Intro-->
-            <section class="row tm-mb-1">
-                <h2 class="col-12 text-center tm-text-primary tm-my-1 tm-intro-text">Tell Us How You Really Feel?</h2>
-
-                <div class="col-lg-12 text-center">
-
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md">
-                                <div id="vc-container" class="vc-container">
-                                    <div class="vc-tape-wrapper">
-                                        <div class="vc-tape">
-                                            <div class="vc-tape-back">
-                                                <div class="vc-tape-wheel vc-tape-wheel-left">
-                                                    <div></div>
-                                                </div>
-                                                <div class="vc-tape-wheel vc-tape-wheel-right">
-                                                    <div></div>
-                                                </div>
-                                            </div>
-                                            <div class="vc-tape-front vc-tape-side-a">
-                                                <span>A</span>
-                                            </div>
-                                            <div class="vc-tape-front vc-tape-side-b">
-                                                <span>B</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="vc-loader"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="jumbotron">
-                            <h1 class="display-4">Record a sound!</h1>
-                            <p class="lead">Record a 5-10 second clip of speech and we will try to determine
-                                the major emotion.</p>
-                            <hr class="my-4">
-                            <button class="btn btn-success btn-lg" role="button" id="startRecord"
-                                onclick="startAudioRecord()">Start recording</button>
-                            <button class="btn btn-danger btn-lg" role="button" id="stopRecord" disabled
-                                onclick="stopAudioRecord()">End recording</button>
-                            <hr class="my-4">
-                            <ol id="recordingsList"></ol>
-                        </div>
-                    </div>
-                </div>
+        <h2 class="col-12 text-center tm-text-primary tm-my-1 tm-intro-text">Tell Us How You Really Feel?</h2>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="jumbotron col-8">
+                <h1 class="display-4">Record a sound!</h1>
+                <p class="lead">Record a 5-10 second clip of speech and we will try to determine
+                    the major emotion.</p>
+                <hr class="my-2">
+                <button class="btn btn-success btn-lg" role="button" id="startRecord" onclick="startAudioRecord()">Start
+                    recording</button>
+                <button class="btn btn-danger btn-lg" role="button" id="stopRecord" disabled
+                    onclick="stopAudioRecord()">End recording</button>
+                <hr class="my-4">
+                <ol id="recordingsList"></ol>
+            </div>
+            <div class="col-3"></div>
         </div>
     </div>
+
     <div class="col-lg-12 text-center">
         <h2>
             <div id="result"></div>
@@ -146,7 +108,7 @@
             </h4>
 
     </div>
-    </section>
+    <!-- </section> -->
     </div>
     </div>
 
@@ -161,27 +123,6 @@
             <a href="https://github.com/timsamson/audible_emotion_recognition.git" target="_blank">Upgraded
                 Potatoes &copy; 2021 </a>
         </p>
-
-        <div class="attribution">
-            <p>Songs by <a href="http://freemusicarchive.org/music/Blue_Ducks/">Blue Ducks</a> and <a
-                    href="http://freemusicarchive.org/music/Blank__Kytt/">Blank & Kytt</a>:</p>
-
-            <div xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"
-                about="http://freemusicarchive.org/music/Blue_Ducks/Six/"><span property="dct:title">Six</span> (<a
-                    rel="cc:attributionURL" property="cc:attributionName"
-                    href="http://freemusicarchive.org/music/Blue_Ducks/">Blue Ducks</a>) / <a rel="license"
-                    href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a></div>
-
-            <div xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"
-                about="http://freemusicarchive.org/music/Blank__Kytt/Heavy_Crazy_Serious/"><span
-                    property="dct:title">Heavy, Crazy, Serious</span> (<a rel="cc:attributionURL"
-                    property="cc:attributionName" href="http://blankkytt.bandcamp.com/">Blank & Kytt</a>) / <a
-                    rel="license" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></div>
-
-            <p>Cassette tape PSD by <a href="http://manicho.deviantart.com/art/Cassette-PSD-File-86548493">Mauricio
-                    Estrella</a></p>
-        </div>
-        <!--//attribution-->
     </footer>
 
 
@@ -196,10 +137,6 @@
     <script src="https://d3js.org/d3.v4.js" charset="utf-8"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="../static/js/transform.js"></script>
-    <script src="../static/js/knobKnob.jquery.js"></script>
-    <script type="text/javascript" src="../static/js/jquery.cassette.js"></script>
-    <script type="text/javascript">	$(function () { $('#vc-container').cassette(); });</script>
 </body>
 
 </html>
