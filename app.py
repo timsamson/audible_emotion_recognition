@@ -49,17 +49,11 @@ def model_test(input_file):
         label = "Male"
     elif gender[0] == 1:
         label = "Female"
-    # replace vs. append
-    # results_dict["Predicted Emotion"].append(pred_emotion[0])
-    # results_dict["Emotion Categories"].append(emotion_labels.tolist())
-    # results_dict["Probabilities"].append(probs[0].tolist())
-    # results_dict["Predicted Sex"].append(label)
     results_dict["predictedEmotion"] = pred_emotion[0]
     results_dict["emotionCategories"] = emotion_labels.tolist()
     results_dict["probabilities"] = probs[0].tolist()
     results_dict["predictedSex"] = label
     print(results_dict)
-    # session['dict'] = results_dict
     return jsonify(results_dict)
 
 def plot_audio(input_file):
@@ -117,28 +111,18 @@ def plot():
     src_path = user_file['filepath']
     # result = plot_audio(src_path)
     return(src_path)
-
-# @app.route("/api/v1.0", methods=['GET', 'POST'])
-# def load_data():
-#     if request.method == "POST":
-#         f = request.files['audio_data']
-#         file_name = datetime.datetime.now().strftime("uploads/%Y-%m-%d-%H-%M-%S.wav")
-#         with open(file_name, 'wb') as audio_file:
-#             f.save(audio_file)
-
-#         results = model_test(file_name)
-#         session['dict']=results
-
-#         print('file uploaded successfully')
-#         return (results)
-#     else:
-#         return (session.dict)
        
-@app.route("/gallery")
+@app.route("/gallery", methods=['GET', 'POST'])
 def gallery_page():
     print("responding to gallery page route request")
-    return render_template("gallery.html")
-
+    if request.method == "POST":
+        f = request.files['audio_data']
+        results = model_test(f)
+        print('file uploaded to model')
+        print(results)
+        return (results)
+    else:
+        return render_template('gallery.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
