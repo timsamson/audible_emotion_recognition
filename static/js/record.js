@@ -67,7 +67,7 @@ function createDownloadLink(blob) {
     audioPlayback.controls = true;
     audioPlayback.src = url;
 
-    link.href = url;
+    // link.href = url;
     filename = new Date().toISOString();
     link.download = filename+".wav";
     link.innerHTML = "Download";
