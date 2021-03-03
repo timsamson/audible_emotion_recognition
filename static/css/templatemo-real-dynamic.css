@@ -44,7 +44,7 @@ ul, i { color: #666; }
 ul { line-height: 2; }
 
 .tm-container {
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto;
 }
 
@@ -52,33 +52,37 @@ ul { line-height: 2; }
 
 .tm-site-header {
     background-color: #474849;
-    background-image: url(static/img/stripe.png);
-    height: 60px;    
+    background-image: url(../img/stripe.png);
+    height: 10px;
 }
 
 .tm-site-header-overlay {
     color: white;
     background-color: #656667;    
-    padding-top: 20px; 
+    padding-top: 5px; 
 }
 
 .tm-header-stripe {
     height: 20px;
     width: 68.75%;
     background-color: #474849;      
-    background-image: url(static/img/stripe-short.png);
+    background-image: url(../img/stripe-short.png);
 }
 
 .tm-header-stripe-short {
     width: 62%;
-    margin-top: 20px;  
+    margin-top: 5px;  
 }
 
-.tm-site-header-left { padding-bottom: 55px; }
+.tm-site-header-left { 
+  padding-bottom: 10px;
+  padding-left: auto;
+ }
 
 .tm-site-header-right {
-    padding-top: 40px;
-    padding-bottom: 20px;
+    /* padding-top: 10px; */
+    padding-right: 10%;
+    padding-bottom: 10px;
 }
 
 .tm-site-name { font-size: 3rem; }
@@ -88,7 +92,7 @@ ul { line-height: 2; }
   font-size: 1.4rem;
   transform: skew(-20deg, 0);
   transition: all 0.3s ease;
-  margin-right: 20px;
+  margin-right: auto;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -159,8 +163,20 @@ ul { line-height: 2; }
 }
 
 .tm-icon-2 { padding: 80px 30px; }
-footer { padding-bottom: 55px; }
 
+footer { 
+  padding-bottom: 55px;
+  background-color: #68696A;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #fff;
+ }
+
+
+}
 .btn {
   font-size: 1.2rem;
   padding: 10px 35px;
@@ -270,7 +286,7 @@ i { color: #ABC; }
   }
 }
 
-.tm-name { font-size: 1.4rem; }
+.tm-name { font-size: 14px; }
 
 .tm-members {
     display: flex;
@@ -678,7 +694,7 @@ select:not([multiple]) {
 
     .tm-nav {        
         position: relative;
-        max-width: 200px;
+        max-width: 80%;
     }
 
     #navbarNav {
@@ -837,3 +853,81 @@ figure.effect-honey:hover h4 i {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
+
+/* #card Data for files*/
+html,
+body,
+.view {
+  height: 100%; }
+
+#mobile-box {
+  width: 360px; }
+
+.gradient-card {
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(220, 66, 37, 0.5)), color-stop(100%, rgba(0, 47, 75, 0.5)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 47, 75, 0.5) 0%, rgba(220, 66, 37, 0.5) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0, 47, 75, 0.5) 0%, rgba(220, 66, 37, 0.5) 100%);
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 47, 75, 0.5)), to(rgba(220, 66, 37, 0.5)));
+  background: linear-gradient(to bottom, rgba(0, 47, 75, 0.5) 0%, rgba(220, 66, 37, 0.5) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#002f4b', endColorstr='#00000000', GradientType=0);
+  /* IE6-9 */ }
+
+.card {
+  -webkit-border-radius: 10px;
+  border-radius: 10px; 
+  /* padding-left: 10px;
+  padding-right: 10px; */
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.card .view {
+  -webkit-border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  border-top-right-radius: 10px; }
+
+.card h5 a {
+  color: #0d47a1;
+}
+.card h5 a:hover {
+  color: #072f6b;
+}
+
+#pButton {
+  float: left; }
+
+#timeline {
+  width: 90%;
+  height: 2px;
+  margin-top: 20px;
+  margin-left: 10px;
+  float: left;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.3); }
+
+#pButton {
+  margin-top: 12px;
+  cursor: pointer; }
+
+#playhead {
+  width: 8px;
+  height: 8px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  margin-top: -3px;
+  background: black;
+  cursor: pointer; }
+
+#card-layout {
+  margin-left: 30px;
+  margin-right: 30px;
+
+  }

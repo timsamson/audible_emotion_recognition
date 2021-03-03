@@ -1,21 +1,25 @@
-from flask import Flask, jsonify, render_template, redirect, request
+from flask import Flask, jsonify, render_template, redirect, request, session
 
 import os
 import psycopg2
 import numpy as np
 import socket
 import librosa
-# from pylab import *
 import librosa.display
+from matplotlib import pyplot as plt
 from joblib import load
 import datetime
 
 results_dict = {
-    "Predicted Emotion": [],
-    "Emotion Categories": [], 
-    "Probabilities": [], 
-    "Predicted Sex": []
+    "predictedEmotion": [],
+    "emotionCategories": [], 
+    "probabilities": [], 
+    "predictedSex": []
     }
+
+user_file = {
+    'filepath': []
+}
 
 #functions
 def input_parser(input_file):
@@ -31,9 +35,9 @@ def input_parser(input_file):
    return feature
 
 def model_test(input_file):
-
+    user_file["filepath"] = input_file
     model = load('models/rf_model.sav')
-    model2 = load('models/gender_model.sav')
+    model2 = load('models/gen_emo_rf_model.sav')
     feature = input_parser(input_file)
     arr = np.array(feature)
     arr2d = np.reshape(arr, (1,128))
@@ -45,19 +49,17 @@ def model_test(input_file):
         label = "Male"
     elif gender[0] == 1:
         label = "Female"
-
-    # results_dict = {
-    #     "Predicted Emotion": pred_emotion[0],
-    #     "Emotion Categories": emotion_labels.tolist(), 
-    #     "Probabilities": probs[0].tolist(), 
-    #     "Predicted Sex": label
-    #     }
-    results_dict["Predicted Emotion"].append(pred_emotion[0])
-    results_dict["Emotion Categories"].append(emotion_labels.tolist())
-    results_dict["Probabilities"].append(probs[0].tolist())
-    results_dict["Predicted Sex"].append(label)
-
-
+    # replace vs. append
+    # results_dict["Predicted Emotion"].append(pred_emotion[0])
+    # results_dict["Emotion Categories"].append(emotion_labels.tolist())
+    # results_dict["Probabilities"].append(probs[0].tolist())
+    # results_dict["Predicted Sex"].append(label)
+    results_dict["predictedEmotion"] = pred_emotion[0]
+    results_dict["emotionCategories"] = emotion_labels.tolist()
+    results_dict["probabilities"] = probs[0].tolist()
+    results_dict["predictedSex"] = label
+    print(results_dict)
+    # session['dict'] = results_dict
     return jsonify(results_dict)
 
 def plot_audio(input_file):
@@ -65,13 +67,15 @@ def plot_audio(input_file):
     data, sampling_rate = librosa.load(input_file)
     plt.figure(figsize=(12, 4))
     plot_fig = librosa.display.waveplot(data, sr=sampling_rate)
-
     return(data, sampling_rate, plot_fig)
 
+    
 app = Flask(__name__)
 
-app.config['SESSION_COOKIE_SAMESITE'] = True
-app.config['SESSION_COOKIE_SECURE'] = True
+# app.config['SESSION_COOKIE_SAMESITE'] = True
+# app.config['SESSION_COOKIE_SECURE'] = True
+
+app.secret_key = 'upgraded potato'
 
 # App routes
 
@@ -88,30 +92,48 @@ def emotions_page():
 @app.route("/", methods=['GET', 'POST'])
 def record_page():
     print("responding to record page route request")
-
-
     #     return render_template('index.html', request="POST")
     # else:
-    return render_template('index.html')
-
-# @app.route("/output")
-# def output():
-
-@app.route("/api/v1.0", methods=['GET', 'POST'])
-def load_data():
     if request.method == "POST":
         f = request.files['audio_data']
-        file_name = datetime.datetime.now().strftime("uploads/%Y-%m-%d-%H-%M-%S.wav")
-        with open(file_name, 'wb') as audio_file:
-            f.save(audio_file)
+        # file_name = datetime.datetime.now().strftime("uploads/%Y-%m-%d-%H-%M-%S.wav")
+        # with open(file_name, 'wb') as audio_file:
+        #     f.save(audio_file)
 
-        results = model_test(file_name)
+        results = model_test(f)
+        # session['dict']=results
         print('file uploaded successfully')
+        print(results)
         return (results)
     else:
-        return (jsonify(results_dict))
-       
+        return render_template('index.html')
 
+@app.route("/data")
+def data():
+    return(jsonify(results_dict))
+
+@app.route("/plot")
+def plot():
+    src_path = user_file['filepath']
+    # result = plot_audio(src_path)
+    return(src_path)
+
+# @app.route("/api/v1.0", methods=['GET', 'POST'])
+# def load_data():
+#     if request.method == "POST":
+#         f = request.files['audio_data']
+#         file_name = datetime.datetime.now().strftime("uploads/%Y-%m-%d-%H-%M-%S.wav")
+#         with open(file_name, 'wb') as audio_file:
+#             f.save(audio_file)
+
+#         results = model_test(file_name)
+#         session['dict']=results
+
+#         print('file uploaded successfully')
+#         return (results)
+#     else:
+#         return (session.dict)
+       
 @app.route("/gallery")
 def gallery_page():
     print("responding to gallery page route request")
