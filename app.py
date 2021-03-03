@@ -36,7 +36,7 @@ def input_parser(input_file):
 
 def model_test(input_file):
     user_file["filepath"] = input_file
-    model = load('models/rf_model.sav')
+    model = load('models/rf2_model.sav')
     model2 = load('models/gen_emo_rf_model.sav')
     feature = input_parser(input_file)
     arr = np.array(feature)
