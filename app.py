@@ -83,6 +83,11 @@ def emotions_page():
     print("responding to emotions route request")
     return render_template("emotions.html")
 
+@app.route("/viz")
+def visuals_page():
+    print("responding to visualzations route request")
+    return render_template("viz.html")
+
 @app.route("/", methods=['GET', 'POST'])
 def record_page():
     print("responding to record page route request")
