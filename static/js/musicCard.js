@@ -19,7 +19,15 @@ function play(event) {
     // link.href = url;
     filename = url;
     d3.json("/tv_movie", function(data) {
-        buildBarChart(data[0].predictedEmotion, data[0].emotionCategories, data[0].probabilities, data[0].predictedSex)
+
+        
+        ["hanks", "mustard", "ewdavid", "gretchen", "nathan", "vader", "theoffice", "witch"].forEach(function(keyword, index) {
+            if(url.includes(keyword)) {
+                console.log(keyword, index);
+                buildBarChart(data[index].predictedEmotion, data[index].emotionCategories, data[index].probabilities, data[index].predictedSex)
+            }
+        })
+        
     })
     // var xhr = new XMLHttpRequest();
     // xhr.onload = function(e) {
