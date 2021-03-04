@@ -27,8 +27,8 @@
             <div class="row">
                 <div class="col-lg-3 tm-site-header-left text-center">
                     <p><a href="/">
-                            <img src="../static/img/emotion_predictor_logo.png" alt="Emotion Predictor"
-                                width="80%" max-width= " 100px text">
+                            <img src="../static/img/emotion_predictor_logo.png" alt="Emotion Predictor" width="80%"
+                                max-width=" 100px text">
                         </a></p>
                     <H3 class="text-white">Emotion Predictor</H3>
                 </div>
@@ -76,23 +76,25 @@
     <div class="container-fluid">
         <div class="row bgimg">
             <div class="col-3"></div>
-            <div class="jumbotron col-6 text-center">
-                <div>
-                    <h1>Record a sound!</h1>
-                    <p>Record a 5-10 second clip of speech and we will try to determine
-                        the major emotion.</p>
+            <div class="col-6"><br>
+                <div class="jumbotron text-center">
+                    <div>
+                        <h1>Record a sound!</h1>
+                        <p>Record a 5-10 second clip of speech and we will try to determine
+                            the major emotion.</p>
+                        <hr>
+                    </div>
+                    <div>
+                        <button class="btn btn-success btn-lg" role="button" id="startRecord"
+                            onclick="startAudioRecord()">Start
+                            recording</button>
+                        <button class="btn btn-danger btn-lg" role="button" id="stopRecord" disabled
+                            onclick="stopAudioRecord()">End
+                            recording</button>
+                    </div>
                     <hr>
+                    <ol id="recordingsList"></ol>
                 </div>
-                <div>
-                    <button class="btn btn-success btn-lg" role="button" id="startRecord"
-                        onclick="startAudioRecord()">Start
-                        recording</button>
-                    <button class="btn btn-danger btn-lg" role="button" id="stopRecord" disabled
-                        onclick="stopAudioRecord()">End
-                        recording</button>
-                </div>
-                <hr>
-                <ol id="recordingsList"></ol>
             </div>
             <div class="col-3"></div>
         </div>
