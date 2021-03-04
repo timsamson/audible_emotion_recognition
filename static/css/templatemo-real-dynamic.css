@@ -99,8 +99,8 @@ ul { line-height: 2; }
 
 .navbar-expand-lg .navbar-nav .nav-link {
   color: white;
-  padding: 14px 50px;      
-  transform: skew(20deg, 0);
+  padding: 14px 20px;      
+  transform: skew(10deg, 0);
 }
 
 .nav-item.active,
@@ -167,22 +167,32 @@ ul { line-height: 2; }
 .tm-icon-2 { padding: 80px 30px; }
 
 footer { 
-  padding-bottom: 55px;
-  background-color: #68696A;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
+  position: fixed;
+  height: 40px;
+  background-color: rgb(101, 101, 101);
+  /* background-color: #68696A; */
   color: #fff;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
  }
-
 
 }
 .btn {
   font-size: 1.2rem;
   padding: 10px 35px;
   border: none;
+}
+
+@media (max-width: 899px){
+  .btn {
+    font-size: 1.5rem;
+    padding: 20px;
+    margin-bottom: 10px;
+    width: 80%;
+    border: none;
+  }
 }
 
 .btn-pad { padding: 10px 35px; }
@@ -287,6 +297,8 @@ i { color: #ABC; }
     min-width: 120px;
   }
 }
+
+
 
 .tm-name { font-size: 2vw; }
 
@@ -698,7 +710,7 @@ select:not([multiple]) {
 
     .tm-nav {        
         position: relative;
-        max-width: 80%;
+        max-width: 70%;
     }
 
     #navbarNav {
@@ -902,6 +914,7 @@ body,
 
 }
 
+
 .card h5 a {
   color: #0d47a1;
 }
@@ -950,6 +963,13 @@ body,
   width: 100%;
   height: 15vw;
   object-fit: cover
+}
+
+@media (max-width: 599px) {
+  .card-img-top{
+  height: 35vw;}
+  .card h5 {
+  font-size: 6vw;}
 }
 
 .jumbotron {
