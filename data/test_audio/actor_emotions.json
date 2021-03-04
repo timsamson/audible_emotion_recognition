@@ -1,1 +1,170 @@
-[null, null, null, null, null, null, null, null]
+[
+  {
+    "emotionCategories": [
+      "angry", 
+      "disgust", 
+      "fearful", 
+      "happy", 
+      "sad", 
+      "surprise"
+    ], 
+    "keyword": "hanks", 
+    "predictedEmotion": "happy", 
+    "predictedSex": "Female", 
+    "probabilities": [
+      0.15, 
+      0.145, 
+      0.215, 
+      0.28, 
+      0.075, 
+      0.135
+    ]
+  }, 
+  {
+    "emotionCategories": [
+      "angry", 
+      "disgust", 
+      "fearful", 
+      "happy", 
+      "sad", 
+      "surprise"
+    ], 
+    "keyword": "mustard", 
+    "predictedEmotion": "angry", 
+    "predictedSex": "Male", 
+    "probabilities": [
+      0.265, 
+      0.07, 
+      0.09, 
+      0.245, 
+      0.15, 
+      0.18
+    ]
+  }, 
+  {
+    "emotionCategories": [
+      "angry", 
+      "disgust", 
+      "fearful", 
+      "happy", 
+      "sad", 
+      "surprise"
+    ], 
+    "keyword": "ewdavid", 
+    "predictedEmotion": "surprise", 
+    "predictedSex": "Female", 
+    "probabilities": [
+      0.205, 
+      0.07, 
+      0.105, 
+      0.19, 
+      0.125, 
+      0.305
+    ]
+  }, 
+  {
+    "emotionCategories": [
+      "angry", 
+      "disgust", 
+      "fearful", 
+      "happy", 
+      "sad", 
+      "surprise"
+    ], 
+    "keyword": "gretchen", 
+    "predictedEmotion": "fearful", 
+    "predictedSex": "Male", 
+    "probabilities": [
+      0.185, 
+      0.08, 
+      0.39, 
+      0.18, 
+      0.075, 
+      0.09
+    ]
+  }, 
+  {
+    "emotionCategories": [
+      "angry", 
+      "disgust", 
+      "fearful", 
+      "happy", 
+      "sad", 
+      "surprise"
+    ], 
+    "keyword": "nathan", 
+    "predictedEmotion": "sad", 
+    "predictedSex": "Male", 
+    "probabilities": [
+      0.075, 
+      0.295, 
+      0.035, 
+      0.1, 
+      0.36, 
+      0.135
+    ]
+  }, 
+  {
+    "emotionCategories": [
+      "angry", 
+      "disgust", 
+      "fearful", 
+      "happy", 
+      "sad", 
+      "surprise"
+    ], 
+    "keyword": "vader", 
+    "predictedEmotion": "happy", 
+    "predictedSex": "Male", 
+    "probabilities": [
+      0.135, 
+      0.085, 
+      0.215, 
+      0.27, 
+      0.185, 
+      0.11
+    ]
+  }, 
+  {
+    "emotionCategories": [
+      "angry", 
+      "disgust", 
+      "fearful", 
+      "happy", 
+      "sad", 
+      "surprise"
+    ], 
+    "keyword": "theoffice", 
+    "predictedEmotion": "surprise", 
+    "predictedSex": "Female", 
+    "probabilities": [
+      0.165, 
+      0.145, 
+      0.14, 
+      0.105, 
+      0.195, 
+      0.25
+    ]
+  }, 
+  {
+    "emotionCategories": [
+      "angry", 
+      "disgust", 
+      "fearful", 
+      "happy", 
+      "sad", 
+      "surprise"
+    ], 
+    "keyword": "witch", 
+    "predictedEmotion": "angry", 
+    "predictedSex": "Male", 
+    "probabilities": [
+      0.28, 
+      0.12, 
+      0.265, 
+      0.165, 
+      0.11, 
+      0.06
+    ]
+  }
+]
