@@ -22,17 +22,6 @@ user_file = {
     'filepath': []
 }
 
-audio_file_paths = [
-    "static/audio/mono_a13_hanks.wav", 
-    "static/audio/mono_clue_mustard.wav",
-    "static/audio/mono_ewdavid.wav",
-    "static/audio/mono_meangirls_gretchen.wav",
-    "static/audio/mono_nathan.wav",
-    "static/audio/mono_starwars_vader.wav",
-    "static/audio/mono_theoffice_michael.wav",
-    "static/audio/mono_wizardofoz_witch.wav"
-]
-
 #functions
 def input_parser(input_file):
 
@@ -75,7 +64,19 @@ def plot_audio(input_file):
     plot_fig = librosa.display.waveplot(data, sr=sampling_rate)
     return(data, sampling_rate, plot_fig)
 
+
+audio_file_paths = [
+    "static/audio/mono_a13_hanks.wav", 
+    "static/audio/mono_clue_mustard.wav",
+    "static/audio/mono_ewdavid.wav",
+    "static/audio/mono_meangirls_gretchen.wav",
+    "static/audio/mono_nathan.wav",
+    "static/audio/mono_starwars_vader.wav",
+    "static/audio/mono_theoffice_michael.wav",
+    "static/audio/mono_wizardofoz_witch.wav"
+]
 tv_movie_sounds = [model_test(path) for path in audio_file_paths]
+
 
 
 app = Flask(__name__)
@@ -127,7 +128,6 @@ def data():
 
 @app.route("/tv_movie")
 def more_data():
-
     print("Success!!!")
     return(jsonify(tv_movie_sounds))
 

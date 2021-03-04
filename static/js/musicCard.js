@@ -1,3 +1,5 @@
+
+
 //Get reference for bootstrap card
 var music = document.querySelectorAll('.music');
 document.querySelectorAll('.pButton').forEach(item => {
@@ -16,15 +18,17 @@ function play(event) {
     
     // link.href = url;
     filename = url;
-    
-    var xhr = new XMLHttpRequest();
-    xhr.onload = function(e) {
-        if(this.readyState === 4) {
-            console.log("Server accessed successfully");
-            buildMetaData()
-            // console.log("called BuildMetaData")
-        }
-    };
+    d3.json("/tv_movie", function(data) {
+        buildBarChart(data[0].predictedEmotion, data[0].emotionCategories, data[0].probabilities, data[0].predictedSex)
+    })
+    // var xhr = new XMLHttpRequest();
+    // xhr.onload = function(e) {
+    //     if(this.readyState === 4) {
+    //         console.log("Server accessed successfully");
+    //         buildMetaData()
+    //         // console.log("called BuildMetaData")
+    //     }
+    // };
 
     // var fd = new FormData();
     // fd.append("audio_data", blob, filename);
