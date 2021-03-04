@@ -3,7 +3,7 @@
 ![logo](static/img/emotion_peeps.jpg)
 
 ## Table of contents
-* [Emotion Predictor](#Emotion Predictor)
+* [Emotion Predictor](#emotion-predictor)
 * [Technologies](#technologies)
 * [Objective](#objective)
 * [Extract](#extract)
@@ -17,7 +17,7 @@
 * [Resources](#resources)
 * [Contacts](#contacts)
 
-![wave](static/img/sound_wave.png)
+
 
 ## Emotion Predictor 
 
