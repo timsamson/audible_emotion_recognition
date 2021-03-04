@@ -67,15 +67,12 @@
         </div> <!-- tm-site-header-overlay -->
         <div class="tm-header-stripe w-100"></div>
     </div>
-    <div class="tm-container">
-        <div class="parallax-window">
-            <img src="../static/img/emotion_peeps.jpg" width=100%>
-        </div>
+    <div class="tm-container bg-white">
+        <img src="../static/img/emotion_peeps.jpg" width=100%>
     </div>
-
     <div class="tm-container bg-white">
         <div class="tm-header-stripe w-100"></div>
-        <h2 class="col-12 text-center tm-text-primary tm-my-1 tm-intro-text">Tell Us How You Really Feel?</h2>
+        <h2 class="col-12 text-center">Tell Us How You Really Feel?</h2>
     </div>
     <div class="row">
         <div class="col-2"></div>
@@ -84,10 +81,12 @@
             <p class="lead">Record a 5-10 second clip of speech and we will try to determine
                 the major emotion.</p>
             <hr class="my-2">
+            <div class = "container-fluid">
             <button class="btn btn-success btn-lg" role="button" id="startRecord" onclick="startAudioRecord()">Start
                 recording</button>
             <button class="btn btn-danger btn-lg" role="button" id="stopRecord" disabled onclick="stopAudioRecord()">End
                 recording</button>
+            </div>
             <hr class="my-4">
             <ol id="recordingsList"></ol>
         </div>
