@@ -970,6 +970,8 @@ body,
   height: 35vw;}
   .card h5 {
   font-size: 6vw;}
+  }
+
 }
 
 .jumbotron {
@@ -995,3 +997,4 @@ body,
 .card-deck {
   padding-bottom: 25px;
 }
+
