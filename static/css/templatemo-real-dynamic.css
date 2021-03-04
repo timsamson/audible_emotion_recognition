@@ -65,6 +65,13 @@ ul { line-height: 2; }
     padding-top: 5px; 
 }
 
+@media (max-width: 995px) {
+  .tm-header-stripe-short { width: 0%;}
+  .tm-header-stripe { width: 0%;}
+}
+
+
+
 .tm-header-stripe {
     height: 20px;
     width: 85%;
