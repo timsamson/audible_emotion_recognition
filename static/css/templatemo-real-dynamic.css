@@ -288,7 +288,7 @@ i { color: #ABC; }
   }
 }
 
-.tm-name { font-size: 14px; }
+.tm-name { font-size: 2vw; }
 
 .tm-members {
     display: flex;
@@ -315,7 +315,9 @@ i { color: #ABC; }
 
 @media (max-width: 549px) {
   .tm-members { max-width: 260px; }
+  .tm-name { font-size: 6vw;}
 }
+
 
 /* 
   Gallery Item Hover Effect
@@ -692,7 +694,7 @@ select:not([multiple]) {
         border-radius: 0;
     }
 
-    .navbar-toggler i { font-size: 1.8rem; }
+    .navbar-toggler i { font-size: 1rem; }
 
     .tm-nav {        
         position: relative;
@@ -960,7 +962,7 @@ body,
   }
 
 .bgimg {
-  background-image: url('../img/emotion_peeps.jpg');
+  background-image: url('../img/emotion-peeps.png');
   background-size: cover ;
   background-position: center;
   /* max-width: 100%; */
