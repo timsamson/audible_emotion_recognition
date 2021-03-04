@@ -706,7 +706,7 @@ select:not([multiple]) {
         border-radius: 0;
     }
 
-    .navbar-toggler i { font-size: 1rem; }
+    .navbar-toggler i { font-size: 3rem; }
 
     .tm-nav {        
         position: relative;
