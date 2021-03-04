@@ -48,8 +48,9 @@ ul { line-height: 2; }
     margin: 0 auto;
 }
 
-.container-fluid { max-width: 90%;
-padding-top: 10px; }
+.container-fluid { 
+  max-width: 90%;
+  padding-top: 10px; }
 
 .tm-site-header {
     background-color: #474849;
@@ -961,9 +962,8 @@ body,
 .bgimg {
   background-image: url('../img/emotion_peeps.jpg');
   background-size: cover ;
-  height: 100%;
-  max-width: 90%;
-  margin-left: 10px;
-  margin-right: 10px;
-  /* background-repeat:space; */
+  background-position: center;
+  /* max-width: 100%; */
+  /* margin-left: 10px;
+  margin-right: 10px; */
 }
