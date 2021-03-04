@@ -44,15 +44,15 @@
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item active">
                                         <a class="nav-link tm-nav-link" href="/">Home <span
-                                            class="sr-only">(current)</span></a>
+                                                class="sr-only">(current)</span></a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link tm-nav-link" href="/emotions">Emotions<span
-                                            class="sr-only"></span></a>
+                                                class="sr-only"></span></a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link tm-nav-link" href="/gallery">Test Clips<span
-                                            class="sr-only"></span></a>
+                                                class="sr-only"></span></a>
                                     </li>
                                     <li class="nav-item ">
                                         <a class="nav-link tm-nav-link" href="/viz">Visualization <span
@@ -71,62 +71,66 @@
                     </div> <!-- col -->
                 </div> <!-- row -->
             </div> <!-- container fluid -->
-        </div> <!-- tm-site-header-overlay -->
-        <div class="tm-header-stripe w-100"></div>
-    </div>
-    <div class="tm-container bg-white">
-        <img src="../static/img/emotion_peeps.jpg" width=100%>
-    </div>
-    <div class="tm-container bg-white">
-        <div class="tm-header-stripe w-100"></div>
-        <h2 class="col-12 text-center">Tell Us How You Really Feel?</h2>
-    </div>
-    <div class="row">
-        <div class="col-2"></div>
-        <div class="jumbotron col-8">
-            <h1 class="display-4">Record a sound!</h1>
-            <p class="lead">Record a 5-10 second clip of speech and we will try to determine
-                the major emotion.</p>
-            <hr class="my-2">
-            <div class = "container-fluid">
-            <button class="btn btn-success btn-lg" role="button" id="startRecord" onclick="startAudioRecord()">Start
-                recording</button>
-            <button class="btn btn-danger btn-lg" role="button" id="stopRecord" disabled onclick="stopAudioRecord()">End
-                recording</button>
-            </div>
-            <hr class="my-4">
-            <ol id="recordingsList"></ol>
         </div>
-        <div class="col-3"></div>
     </div>
+    <!-- </div> tm-site-header-overlay -->
+    <div class="tm-header-stripe w-100 container-fluid"></div>
+    <div class="container-fluid text-white text-center">
+        <h2>Tell Us How You Really Feel?</h2>
     </div>
-
-    <div class="col-lg-12 text-center container-fluid">
-        <h2>
-            <div id="result"></div>
-            </h4>
-            <h4>
-                <div id="cat"></div>
-            </h4>
-            <h4>
-                <div id='prob'></div>
-            </h4>
-            <h4>
-                <div id="sex"></div>
-            </h4>
-
+    <div class="tm-container">
+        <div class="row bgimg">
+            <!-- <div class="bgimg"> -->
+                <!-- <div class="bgimg col-lg-12 container-fluid"> -->
+                <div class="col-3"></div>
+                <div class="jumbotron text-center">
+                    <div>
+                        <h1>Record a sound!</h1>
+                        <p>Record a 5-10 second clip of speech and we will try to determine
+                            the major emotion.</p>
+                        <hr>
+                    </div>
+                    <div>
+                        <button class="btn btn-success btn-lg" role="button" id="startRecord"
+                            onclick="startAudioRecord()">Start
+                            recording</button>
+                        <button class="btn btn-danger btn-lg" role="button" id="stopRecord" disabled
+                            onclick="stopAudioRecord()">End
+                            recording</button>
+                    </div>
+                    <hr>
+                    <ol id="recordingsList"></ol>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        <!-- </div> -->
     </div>
-    <div>
-        <div class=" container-fluid"></div>
-        <footer class="row">
-            <p class="mb-0 w-100 text-center col-12">
-                <a href="https://github.com/timsamson/audible_emotion_recognition.git" target="_blank">Upgraded
-                    Potatoes &copy; 2021 </a>
-            </p>
-        </footer>
+    <div class="tm-container">
+        <div class="row">
+            <!-- </div> -->
+            <div class="col-lg-12 text-center container-fluid">
+                <h2>
+                    <div id="result"></div>
+                    </h4>
+                    <h4>
+                        <div id="cat"></div>
+                    </h4>
+                    <h4>
+                        <div id='prob'></div>
+                    </h4>
+                    <h4>
+                        <div id="sex"></div>
+                    </h4>
+            </div>
+        </div>
     </div>
-
-
+    <div class=" container-fluid"></div>
+    <footer class="row">
+        <p class="mb-0 w-100 text-center col-12">
+            <a href="https://github.com/timsamson/audible_emotion_recognition.git" target="_blank">Upgraded
+                Potatoes &copy; 2021 </a>
+        </p>
+    </footer>
     <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
     <script src="../static/js/barChart.js"></script>
     <script src="../static/js/record.js"></script>
