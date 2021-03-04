@@ -961,7 +961,9 @@ body,
 .bgimg {
   background-image: url('../img/emotion_peeps.jpg');
   background-size: cover ;
+  height: 100%;
+  max-width: 90%;
   margin-left: 10px;
   margin-right: 10px;
-  background-repeat:space;
+  /* background-repeat:space; */
 }

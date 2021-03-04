@@ -80,50 +80,44 @@
     </div>
     <div class="tm-container">
         <div class="row bgimg">
-            <!-- <div class="bgimg"> -->
-                <!-- <div class="bgimg col-lg-12 container-fluid"> -->
-                <div class="col-3"></div>
-                <div class="jumbotron text-center">
-                    <div>
-                        <h1>Record a sound!</h1>
-                        <p>Record a 5-10 second clip of speech and we will try to determine
-                            the major emotion.</p>
-                        <hr>
-                    </div>
-                    <div>
-                        <button class="btn btn-success btn-lg" role="button" id="startRecord"
-                            onclick="startAudioRecord()">Start
-                            recording</button>
-                        <button class="btn btn-danger btn-lg" role="button" id="stopRecord" disabled
-                            onclick="stopAudioRecord()">End
-                            recording</button>
-                    </div>
+            <div class="col-3"></div>
+            <div class="jumbotron text-center">
+                <div>
+                    <h1>Record a sound!</h1>
+                    <p>Record a 5-10 second clip of speech and we will try to determine
+                        the major emotion.</p>
                     <hr>
-                    <ol id="recordingsList"></ol>
                 </div>
-                <div class="col-3"></div>
+                <div>
+                    <button class="btn btn-success btn-lg" role="button" id="startRecord"
+                        onclick="startAudioRecord()">Start
+                        recording</button>
+                    <button class="btn btn-danger btn-lg" role="button" id="stopRecord" disabled
+                        onclick="stopAudioRecord()">End
+                        recording</button>
+                </div>
+                <hr>
+                <ol id="recordingsList"></ol>
             </div>
-        <!-- </div> -->
-    </div>
-    <div class="tm-container">
-        <div class="row">
-            <!-- </div> -->
-            <div class="col-lg-12 text-center container-fluid">
-                <h2>
-                    <div id="result"></div>
-                    </h4>
-                    <h4>
-                        <div id="cat"></div>
-                    </h4>
-                    <h4>
-                        <div id='prob'></div>
-                    </h4>
-                    <h4>
-                        <div id="sex"></div>
-                    </h4>
-            </div>
+            <div class="col-3"></div>
         </div>
     </div>
+    <div class="tm-container">
+        <!-- <div class="row"> -->
+        <div id="result"></div>
+        <!-- </h4>
+                <h4>
+                    <div id="cat"></div>
+                </h4>
+                <h4>
+                    <div id='prob'></div>
+                </h4>
+                <h4>
+                    <div id="sex"></div>
+                </h4>
+        </div> -->
+    </div>
+    <!-- </div> -->
     <div class=" container-fluid"></div>
     <footer class="row">
         <p class="mb-0 w-100 text-center col-12">
