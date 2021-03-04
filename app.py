@@ -9,6 +9,7 @@ import librosa.display
 from matplotlib import pyplot as plt
 from joblib import load
 import datetime
+import json
 
 results_dict = {
     "predictedEmotion": [],
@@ -20,6 +21,17 @@ results_dict = {
 user_file = {
     'filepath': []
 }
+
+audio_file_paths = [
+    "static/audio/mono_a13_hanks.wav", 
+    "static/audio/mono_clue_mustard.wav",
+    "static/audio/mono_ewdavid.wav",
+    "static/audio/mono_meangirls_gretchen.wav",
+    "static/audio/mono_nathan.wav",
+    "static/audio/mono_starwars_vader.wav",
+    "static/audio/mono_theoffice_michael.wav",
+    "static/audio/mono_wizardofoz_witch.wav"
+]
 
 #functions
 def input_parser(input_file):
@@ -54,7 +66,7 @@ def model_test(input_file):
     results_dict["probabilities"] = probs[0].tolist()
     results_dict["predictedSex"] = label
     print(results_dict)
-    return jsonify(results_dict)
+    return results_dict
 
 def plot_audio(input_file):
     
@@ -63,7 +75,9 @@ def plot_audio(input_file):
     plot_fig = librosa.display.waveplot(data, sr=sampling_rate)
     return(data, sampling_rate, plot_fig)
 
-    
+tv_movie_sounds = [model_test(path) for path in audio_file_paths]
+
+
 app = Flask(__name__)
 
 # app.config['SESSION_COOKIE_SAMESITE'] = True
@@ -110,6 +124,12 @@ def record_page():
 @app.route("/data")
 def data():
     return(jsonify(results_dict))
+
+@app.route("/tv_movie")
+def more_data():
+
+    print("Success!!!")
+    return(jsonify(tv_movie_sounds))
 
 @app.route("/plot")
 def plot():
