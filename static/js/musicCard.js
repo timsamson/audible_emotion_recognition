@@ -12,19 +12,18 @@ document.querySelectorAll('.pButton').forEach(item => {
 function play(event) {
     var target = event.target;
     var url = d3.select(target).select('source').attr('src');
-    var filename = ''
+    // var filename = ''
     console.log(url);
     playAudio(url)
     
     // link.href = url;
     filename = url;
-    d3.json("/tv_movie", function(data) {
+    d3.json("static/js/actor_emotions.json", function(data) {
 
-        
-        ["hanks", "mustard", "ewdavid", "gretchen", "nathan", "vader", "theoffice", "witch"].forEach(function(keyword, index) {
+        ["hanks", "mustard", "ewdavid", "gretchen", "nathan", "vader", "theoffice", "witch"].forEach(function(keyword, i) {
             if(url.includes(keyword)) {
-                console.log(keyword, index);
-                buildBarChart(data[index].predictedEmotion, data[index].emotionCategories, data[index].probabilities, data[index].predictedSex)
+                buildBarChart(data[i].predictedEmotion, data[i].emotionCategories, data[i].probabilities, data[i].predictedSex);
+                
             }
         })
         
