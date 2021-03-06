@@ -66,17 +66,35 @@ Emotions include:
 
 ## Test Train
 
+Using the Labrosa library we inputted the wave. Files thru Labrosa to parse the file into 128 Mel-frequency cepstral coefficients (MFCCs) features. MFCCs represent the audio clip as a nonlinear "spectrum-of-a-spectrum". In an MFC, the frequency bands are equally spaced on the scale, which approximates the human auditory system.
+
+This process allowed the audio file to be represented by data that was then able to be fed into various machine learning models for testing and training. We then used the same parsing method to take a user’s inputted file and break it down into MFCC data to be used for the model to predict the makeup of emotions in the person’s voice.
+
+Through the models it was determined that for our purpose Random Forrest Classifier produced the most accurate prediction and was the model that was not overtrained
+
 ![model](static/img/model.JPG)
+
+Emotion Random Forest
 
 ![emotion RF](static/img/model_reports/1emotion_rf.png)
 
-![emotion deep learning](static/img/model_reports/emo_deep_learninng.png)
-
-![gender deep learning](static/img/model_reports/gender_deep_learning.png)
+Gender Random Forest
 
 ![gender RF](static/img/model_reports/gender_rf.png)
 
+Emotion Deep Learning
+
+![emotion deep learning](static/img/model_reports/emo_deep_learninng.png)
+
+Gender Deep Learning
+
+![gender deep learning](static/img/model_reports/gender_deep_learning.png)
+
+KNN Model
+
 ![knn model](static/img/model_reports/knn_model.png)
+
+Accuracy  
 
 ![model chart](static/img/model_chart.JPG)
 
