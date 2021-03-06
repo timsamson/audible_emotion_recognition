@@ -106,7 +106,7 @@ Alexis Bar Chart
 
 ![Alexis](static/img/alexis_bar.JPG)
 
-Emotion Visualizations 
+Emotion Visualizations made using Pandas
 
 ![calm](static/img/calm_vis.JPG)
 
