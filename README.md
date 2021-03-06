@@ -36,13 +36,13 @@ Emotions predictor, can come in handy for Interpreting the emotions in the voice
 
 Emotions include: 
 
-*02 = calm
-*03 = happy
-*04 = sad
-*05 = angry
-*06 = fearful
-*07 = disgust
-*08 = surprised
+* 02 = calm
+* 03 = happy
+* 04 = sad
+* 05 = angry
+* 06 = fearful
+* 07 = disgust
+* 08 = surprised
 
 
 ## Technologies
@@ -56,12 +56,12 @@ Emotions include:
 * Tableau 
 
 ## Extract Transform Load
-•	Data from CSV files of audio voices. 
-•	Used `librosa` package to convert audio files into 128 Features including low-level feature extraction, such as chromograms, Mel spectrogram, MFCC, and various other spectral and rhythmic features
-•	Used Pandas to provide the feature data for emotions and gender as input to the models
-•	Tested `RandomForestClassifier`, `KNeighborsClassifier` , `Keras Deep Learning`, and `Linear Regression` to find the most accurate model.  
-•	Developed a record and playback functionality - the output of which could be read a model for predicting the emotions and the gender of the recorded audio
-•	Sample pre-recorded test clips were given as input to the models and emotions were predicted successfully.
+*	Data from CSV files of audio voices. 
+*	Used `librosa` package to convert audio files into 128 Features including low-level feature extraction, such as chromograms, Mel spectrogram, MFCC, and various other spectral and rhythmic features
+*	Used Pandas to provide the feature data for emotions and gender as input to the models
+*	Tested `RandomForestClassifier`, `KNeighborsClassifier` , `Keras Deep Learning`, and `Linear Regression` to find the most accurate model.  
+*	Developed a record and playback functionality - the output of which could be read a model for predicting the emotions and the gender of the recorded audio
+*	Sample pre-recorded test clips were given as input to the models and emotions were predicted successfully.
 
 ![wave gif](static/img/200_d.gif)
 
@@ -85,7 +85,7 @@ Emotions include:
 
 ## Visualizations
 
-Landing Page- Recorder model
+Landing Page- Recorder model & Emotion Bar Chart 
 
 ![model test](static/img/model_test.JPG)
 
@@ -109,14 +109,14 @@ Alexis Bar Chart
 ## Learnings
 
 Model Accuracy
-•	The gender data contained more female data than male when we combined both the datasets.  The emotion data originally included neutral, calm, happy, sad, fearful, angry, disgust and surprise.  We combined neutral and calm because they were similar.
+*	The gender data contained more female data than male when we combined both the datasets.  The emotion data originally included neutral, calm, happy, sad, fearful, angry, disgust and surprise.  We combined neutral and calm because they were similar.
 
 
-•	This was causing our model to predict female, and calm more than it should.  We took steps to remove extra female data and eliminated calm from our data.  This resulted in a more accurate model.
+*	This was causing our model to predict female, and calm more than it should.  We took steps to remove extra female data and eliminated calm from our data.  This resulted in a more accurate model.
 Predicting Gender
-•	Even with an accurate model, it is still difficult to predict someone’s gender based on a person’s voice.  
-•	The only difference between the male and female larynx is size
-•	Several investigators have argued that a comprehensive understanding of gender differences in vocal emotion recognition can only be achieved by replicating these studies while accounting for influential factors such as stimulus type, gender-balanced samples, number of encoders, decoders, and emotional categories. 
+*	Even with an accurate model, it is still difficult to predict someone’s gender based on a person’s voice.  
+* The only difference between the male and female larynx is size
+*	Several investigators have argued that a comprehensive understanding of gender differences in vocal emotion recognition can only be achieved by replicating these studies while accounting for influential factors such as stimulus type, gender-balanced samples, number of encoders, decoders, and emotional categories. 
 
 ## Run Flask
 
@@ -124,7 +124,7 @@ To Deploy our Flask App, please follow the below steps:
 
 * step 1: Git clone our repository into your local
 
-*from the folder in your terminal, type `python app.py` to launch site
+* from the folder in your terminal, type `python app.py` to launch site
 
 ## Heroku
 
@@ -148,17 +148,6 @@ RAVDESS Dataset: "The Ryerson Audio-Visual Database of Emotional Speech and Song
 
 ![team](static/img/team.JPG)
 
-[Elliott McFarland](https://github.com/emcfarland)
+[Elliott McFarland](https://github.com/emcfarland) * [Celeste Muniz](https://github.com/celeste1030) * [Saroja Shreenivasan](https://github.com/shreeniv) * [Sai Prasanna](https://github.com/prasanna0913) * [Tim Samson](https://github.com/timsamson) * [Sara Simoes](https://github.com/Ssimoes48) 
 
-[Celeste Muniz](https://github.com/celeste1030)
-
-[Saroja Shreenivasan](https://github.com/shreeniv)
-
-[Sai Prasanna](https://github.com/prasanna0913)
-
-[Tim Samson](https://github.com/timsamson)
-
-[Sara Simoes](https://github.com/Ssimoes48)
-
-
-![thanks!](static/img/squirrel_potato.jpg)
+![thanks!](static/img/squirel_potato.jpg)
