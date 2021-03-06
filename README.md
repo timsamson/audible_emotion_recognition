@@ -27,9 +27,9 @@ Emotions Predictor is an application that allows users to record, and playback s
 There are options to compare the frequencies and other attributes for various emotions to see how they show up on a scale.
 Why Emotions Predictor? 
 Empathy is important because it helps us understand how others are feeling so we can respond appropriately to the situation. Not all of us are born as manipulators, fortune-tellers or psychics with excellent empathetic skills. Also there are people who have certain disabilities understanding emotions or having below conditions like:
-•	A person who has difficulty identifying and expressing emotions
-•	People having trouble identifying social cues
-•	People who are hard of hearing
+* A person who has difficulty identifying and expressing emotions
+* People having trouble identifying social cues
+* People who are hard of hearing
 
 Emotions predictor, can come in handy for Interpreting the emotions in the voicemails, FBI recordings, law disputes, alien interactions, etc.
 
@@ -84,19 +84,15 @@ Emotions include:
 
 ## Visualization
 
-Landing Page- Recorder model & Emotion Bar Chart 
+The Emotion Predictor runs as a client-side flask application, in its current edition it does not need nor contain a database. If we were to expand the project and use the user inputted files to be stored used as additional training inputs for the model a database would then be needed.
+
+The application works by using the built-in functionality of HTML5 to allow the users browser to record and store the audio file, the file once recorded to passed into the FLASK app using the POST method where the file can then be run thru the audio parser, breaking it into features and then thru the model. The application uses two different models, one for emotion and one for Male/Female, this production as well as the probability of each emotion and sex is then passed into a JSON file as a dictionary that is used to generate the PLOTLY bar chart of emotions. 
 
 ![model test](static/img/model_test.JPG)
 
-Emotion Visualizations 
-
-![calm](static/img/calm_vis.JPG)
-
-![angry](static/img/angry_vis.JPG)
-
 Test Clips
 
-Used `JavaScript D3` function to call sound file to play in model
+A similar function is used on the Test clips page, but the data is stored as a JSON file to avoid lag in the application attempting to call 8 audio files in a row to build the dictionary on each session. Instead, the page calls a stored dictionary and recalls the specific values for each of the 8 bootstrap cards, allowing for. A much more seem less user experience.
 
 ![sound](static/img/sound_card.JPG)
 
@@ -110,6 +106,17 @@ Alexis Bar Chart
 
 ![Alexis](static/img/alexis_bar.JPG)
 
+Emotion Visualizations 
+
+![calm](static/img/calm_vis.JPG)
+
+![angry](static/img/angry_vis.JPG)
+
+Tableau
+
+![tableau 1](static/img/tableau1.JPG)
+
+![tableau 2](static/img/tableau2.JPG)
 
 ## Learnings
 
