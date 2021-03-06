@@ -99,7 +99,7 @@ Test Clips
 
 Used `JavaScript D3` function to call sound file to play in model
 
-![sound ](static/img/sound_card.JPG)
+![sound](static/img/sound_card.JPG)
 
 Sound cards made with `bootstrap` cards
 
