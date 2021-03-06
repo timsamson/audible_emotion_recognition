@@ -7,13 +7,12 @@
 ## Table of contents
 * [Emotion Predictor](#emotion-predictor)
 * [Technologies](#technologies)
-* [Objective](#objective)
 * [ETL](#extract-transform-load)
 * [Test & Train](#test-train)
 * [Visualization](#visualiation)
 * [Learnings](#learnings)
 * [Run Flask App](#run-flask-app)
-* [Heroku](heroku)
+* [Heroku](#heroku)
 * [Resources](#resources)
 * [Contacts](#contacts)
 
