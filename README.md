@@ -9,12 +9,12 @@
 * [Technologies](#technologies)
 * [ETL](#extract-transform-load)
 * [Test & Train](#test-train)
-* [Visualization](#visualiation)
+* [Visualization](#visualization)
 * [Learnings](#learnings)
 * [Run Flask App](#run-flask-app)
 * [Heroku](#heroku)
 * [Resources](#resources)
-* [Contacts](#contacts)
+* [Contact](#contact)
 
 
 ## Emotion Predictor 
@@ -82,7 +82,7 @@ Emotions include:
 
 ![winner](static/img/winner.JPG)
 
-## Visualizations
+## Visualization
 
 Landing Page- Recorder model & Emotion Bar Chart 
 
