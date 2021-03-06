@@ -9,7 +9,7 @@
 * [Technologies](#technologies)
 * [Objective](#objective)
 * [ETL](#extract-transform-load)
-* [Test & Train](#test-&-train)
+* [Test & Train](#test-train)
 * [Visualization](#visualiation)
 * [Learnings](#learnings)
 * [Run Flask App](#run-flask-app)
@@ -65,7 +65,7 @@ Emotions include:
 
 ![wave gif](static/img/200_d.gif)
 
-## Test & Train
+## Test Train
 
 ![model](static/img/model.JPG)
 
