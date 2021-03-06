@@ -97,6 +97,12 @@ Emotion Visualizations
 
 Test Clips
 
+Used `JavaScript D3` function to call sound file to play in model
+
+![sound ](static/img/sound_card.JPG)
+
+Sound cards made with `bootstrap` cards
+
 ![test clip1](static/img/test_clip1.JPG)
 
 ![test clip2](static/img/test_clip2.JPG)
