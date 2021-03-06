@@ -12,7 +12,7 @@
 * [Test & Train](#test-&-train)
 * [Visualization](#visualiation)
 * [Learnings](#learnings)
-* [Run Flask App](run-flask-app)
+* [Run Flask App](#run-flask-app)
 * [Heroku](heroku)
 * [Resources](#resources)
 * [Contacts](#contacts)
