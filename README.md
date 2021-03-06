@@ -24,7 +24,7 @@
 
 What is the Emotions Predictor?
 
-Emotions Predictor is an application that allows users to record, and playback short audio file and its in-built super cool Machine Learning model will predict the range of emotions and the gender of the audio clip.
+Emotions Predictor is an application that allows users to record, and playback short audio file and its built-in super cool Machine Learning model will predict the range of emotions and the gender of the audio clip.
 There are options to compare the frequencies and other attributes for various emotions to see how they show up on a scale.
 Why Emotions Predictor? 
 Empathy is important because it helps us understand how others are feeling so we can respond appropriately to the situation. Not all of us are born as manipulators, fortune-tellers or psychics with excellent empathetic skills. Also there are people who have certain disabilities understanding emotions or having below conditions like:
