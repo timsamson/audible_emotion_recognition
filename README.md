@@ -12,7 +12,7 @@
 * [Test & Train](#test-&-train)
 * [Visualization](#visualiation)
 * [Learnings](#learnings)
-* [Run Flask App](run-flask)
+* [Run Flask App](run-flask-app)
 * [Heroku](heroku)
 * [Resources](#resources)
 * [Contacts](#contacts)
@@ -124,7 +124,7 @@ Predicting Gender
 * The only difference between the male and female larynx is size
 *	Several investigators have argued that a comprehensive understanding of gender differences in vocal emotion recognition can only be achieved by replicating these studies while accounting for influential factors such as stimulus type, gender-balanced samples, number of encoders, decoders, and emotional categories. 
 
-## Run Flask
+## Run Flask App
 
 To Deploy our Flask App, please follow the below steps:
 
